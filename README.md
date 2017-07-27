@@ -1,4 +1,4 @@
-###iOS使用UITableView实现的富文本编辑器
+### MMRichTextEdit
 实现的功能包含了：
 - 编辑器文字编辑
 - 编辑器图片编辑
@@ -7,10 +7,11 @@
 - 编辑器模型转换为HTML格式内容
 - 配套的Java实现的服务器
 
-以及客户端代码开源托管地址：[RichTextEditDemo](http://git.oschina.net/dhar/iosdemos/tree/master/RichTextEditDemo)  
-还有java实现的文件服务器代码开源托管地址：[javawebserverdemo](http://git.oschina.net/dhar/javawebdemo)  
+对应的java实现的文件服务器代码开源托管地址：[javawebserverdemo](http://git.oschina.net/dhar/javawebdemo)  
 
-下面是几张实现的效果图  
+具体的实现过程以及详细解析可以看我的这篇博客：[iOS使用UITableView实现的富文本编辑器](https://my.oschina.net/u/1242477/blog/1486577)  
+
+下面是实现的效果图  
 ![Demo1](https://static.oschina.net/uploads/img/201707/24205815_bVa4.png "Demo1")
 ![Demo4](https://static.oschina.net/uploads/img/201707/27230228_sDyH.png "Demo4")
 ![Demo3](https://static.oschina.net/uploads/img/201707/24205938_syUr.png "Demo3")
