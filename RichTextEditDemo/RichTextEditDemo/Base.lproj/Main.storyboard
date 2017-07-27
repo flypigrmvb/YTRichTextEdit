@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w4F-kr-639">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="boJ-KQ-Avr">
+            <objects>
+                <navigationController id="w4F-kr-639" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iPm-ar-kth">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C09-Sh-FKr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ket-5A-aRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1057" y="-137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UL-wf-b4W">
+                                <rect key="frame" x="117.5" y="84" width="85" height="30"/>
+                                <state key="normal" title="RichTextEdit"/>
+                                <connections>
+                                    <action selector="onRichTextEditClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnQ-qH-FUO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCw-0P-Kb6">
+                                <rect key="frame" x="39.5" y="122" width="240" height="168"/>
+                                <state key="normal" title="Pick Picture"/>
+                                <connections>
+                                    <action selector="onPIckerPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jvK-Hz-5uO"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F50-kl-Y07">
+                                <rect key="frame" x="40" y="122" width="240" height="168"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.51728381849315064" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="8cz-Ts-SHX"/>
+                                    <constraint firstAttribute="height" constant="168" id="U7T-Vx-7O8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzv-xb-Eaz">
+                                <rect key="frame" x="136.5" y="298" width="47" height="30"/>
+                                <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="onupload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lWS-LD-FQg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lzv-xb-Eaz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1M2-n1-Tdm"/>
+                            <constraint firstItem="F50-kl-Y07" firstAttribute="top" secondItem="3UL-wf-b4W" secondAttribute="bottom" constant="8" id="DlP-Mq-bc7"/>
+                            <constraint firstItem="F50-kl-Y07" firstAttribute="top" secondItem="QCw-0P-Kb6" secondAttribute="top" id="N9n-Am-meZ"/>
+                            <constraint firstItem="3UL-wf-b4W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="O62-YL-US1"/>
+                            <constraint firstItem="F50-kl-Y07" firstAttribute="leading" secondItem="QCw-0P-Kb6" secondAttribute="leading" id="fiQ-ev-eOq"/>
+                            <constraint firstItem="F50-kl-Y07" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="heZ-f6-OsT"/>
+                            <constraint firstItem="3UL-wf-b4W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k2S-7S-j0M"/>
+                            <constraint firstItem="Lzv-xb-Eaz" firstAttribute="top" secondItem="QCw-0P-Kb6" secondAttribute="bottom" constant="8" id="mRv-wq-ioa"/>
+                            <constraint firstItem="F50-kl-Y07" firstAttribute="bottom" secondItem="QCw-0P-Kb6" secondAttribute="bottom" id="pu8-Io-r1D"/>
+                            <constraint firstItem="F50-kl-Y07" firstAttribute="trailing" secondItem="QCw-0P-Kb6" secondAttribute="trailing" id="tMX-ar-0fQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PWg-qL-1FB"/>
+                    <connections>
+                        <outlet property="imageView" destination="F50-kl-Y07" id="NQV-w3-O7h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250.40000000000001" y="-137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>

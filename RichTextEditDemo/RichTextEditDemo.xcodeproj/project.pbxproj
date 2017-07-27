@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C1504B71F208F2700070306 /* MMRichTextConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504B61F208F2700070306 /* MMRichTextConfig.m */; };
+		9C1504BD1F209BC300070306 /* MMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504BC1F209BC300070306 /* MMTextView.m */; };
+		9C1504C01F21CC1100070306 /* MMRichEditAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504BF1F21CC1100070306 /* MMRichEditAccessoryView.m */; };
+		9C1504C41F21F1AB00070306 /* MMPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504C31F21F1AB00070306 /* MMPlaceHolderTextView.m */; };
+		9C1504C71F21F8D200070306 /* MMRichTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504C61F21F8D200070306 /* MMRichTitleCell.m */; };
+		9C1504CA1F21F99400070306 /* MMRichTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504C91F21F99400070306 /* MMRichTitleModel.m */; };
+		9C1504CD1F2203CE00070306 /* MMBaseRichContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504CC1F2203CE00070306 /* MMBaseRichContentCell.m */; };
+		9C1504D41F25CE9E00070306 /* MMRichContentUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504D31F25CE9E00070306 /* MMRichContentUtil.m */; };
+		9C1504D71F25D90900070306 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1504D61F25D90900070306 /* UIImage+Util.m */; };
+		9C49CF781F1F647B00B0C443 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CF771F1F647B00B0C443 /* main.m */; };
+		9C49CF7B1F1F647B00B0C443 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CF7A1F1F647B00B0C443 /* AppDelegate.m */; };
+		9C49CF7E1F1F647B00B0C443 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CF7D1F1F647B00B0C443 /* ViewController.m */; };
+		9C49CF811F1F647B00B0C443 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C49CF7F1F1F647B00B0C443 /* Main.storyboard */; };
+		9C49CF831F1F647B00B0C443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C49CF821F1F647B00B0C443 /* Assets.xcassets */; };
+		9C49CF861F1F647B00B0C443 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C49CF841F1F647B00B0C443 /* LaunchScreen.storyboard */; };
+		9C49CF911F1F647B00B0C443 /* RichTextEditDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CF901F1F647B00B0C443 /* RichTextEditDemoTests.m */; };
+		9C49CF9C1F1F647B00B0C443 /* RichTextEditDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CF9B1F1F647B00B0C443 /* RichTextEditDemoUITests.m */; };
+		9C49CFB11F1F654800B0C443 /* MMRichTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFB01F1F654800B0C443 /* MMRichTextCell.m */; };
+		9C49CFB41F1F655500B0C443 /* MMRichImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFB31F1F655500B0C443 /* MMRichImageCell.m */; };
+		9C49CFB71F1F660D00B0C443 /* RichTextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFB61F1F660D00B0C443 /* RichTextEditViewController.m */; };
+		9C49CFBA1F1F67D200B0C443 /* MMRichTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFB91F1F67D200B0C443 /* MMRichTextModel.m */; };
+		9C49CFBD1F1F67E400B0C443 /* MMRichImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFBC1F1F67E400B0C443 /* MMRichImageModel.m */; };
+		9C7F81E71F24E7C600716D15 /* MMFileUploadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7F81E61F24E7C600716D15 /* MMFileUploadUtil.m */; };
+		FC9900AC4F1CDAE9BA88B32D /* libPods-RichTextEditDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B30B5809E4701C8F0B2CD0 /* libPods-RichTextEditDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C49CF8D1F1F647B00B0C443 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C49CF6B1F1F647B00B0C443 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C49CF721F1F647B00B0C443;
+			remoteInfo = RichTextEditDemo;
+		};
+		9C49CF981F1F647B00B0C443 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C49CF6B1F1F647B00B0C443 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C49CF721F1F647B00B0C443;
+			remoteInfo = RichTextEditDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47B30B5809E4701C8F0B2CD0 /* libPods-RichTextEditDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RichTextEditDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		755A0CBC25D4EFD4CE715BDA /* Pods-RichTextEditDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichTextEditDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RichTextEditDemo/Pods-RichTextEditDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9C1504B51F208F2700070306 /* MMRichTextConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichTextConfig.h; sourceTree = "<group>"; };
+		9C1504B61F208F2700070306 /* MMRichTextConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichTextConfig.m; sourceTree = "<group>"; };
+		9C1504BB1F209BC300070306 /* MMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTextView.h; sourceTree = "<group>"; };
+		9C1504BC1F209BC300070306 /* MMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTextView.m; sourceTree = "<group>"; };
+		9C1504BE1F21CC1100070306 /* MMRichEditAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichEditAccessoryView.h; sourceTree = "<group>"; };
+		9C1504BF1F21CC1100070306 /* MMRichEditAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichEditAccessoryView.m; sourceTree = "<group>"; };
+		9C1504C11F21D0E100070306 /* UtilMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilMacro.h; sourceTree = "<group>"; };
+		9C1504C21F21F1AB00070306 /* MMPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPlaceHolderTextView.h; sourceTree = "<group>"; };
+		9C1504C31F21F1AB00070306 /* MMPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPlaceHolderTextView.m; sourceTree = "<group>"; };
+		9C1504C51F21F8D200070306 /* MMRichTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichTitleCell.h; sourceTree = "<group>"; };
+		9C1504C61F21F8D200070306 /* MMRichTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichTitleCell.m; sourceTree = "<group>"; };
+		9C1504C81F21F99400070306 /* MMRichTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichTitleModel.h; sourceTree = "<group>"; };
+		9C1504C91F21F99400070306 /* MMRichTitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichTitleModel.m; sourceTree = "<group>"; };
+		9C1504CB1F2203CE00070306 /* MMBaseRichContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseRichContentCell.h; sourceTree = "<group>"; };
+		9C1504CC1F2203CE00070306 /* MMBaseRichContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseRichContentCell.m; sourceTree = "<group>"; };
+		9C1504D21F25CE9E00070306 /* MMRichContentUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichContentUtil.h; sourceTree = "<group>"; };
+		9C1504D31F25CE9E00070306 /* MMRichContentUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichContentUtil.m; sourceTree = "<group>"; };
+		9C1504D51F25D90900070306 /* UIImage+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Util.h"; sourceTree = "<group>"; };
+		9C1504D61F25D90900070306 /* UIImage+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Util.m"; sourceTree = "<group>"; };
+		9C49CF731F1F647B00B0C443 /* RichTextEditDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichTextEditDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C49CF771F1F647B00B0C443 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C49CF791F1F647B00B0C443 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9C49CF7A1F1F647B00B0C443 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9C49CF7C1F1F647B00B0C443 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9C49CF7D1F1F647B00B0C443 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C49CF801F1F647B00B0C443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C49CF821F1F647B00B0C443 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C49CF851F1F647B00B0C443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C49CF871F1F647B00B0C443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C49CF8C1F1F647B00B0C443 /* RichTextEditDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichTextEditDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C49CF901F1F647B00B0C443 /* RichTextEditDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichTextEditDemoTests.m; sourceTree = "<group>"; };
+		9C49CF921F1F647B00B0C443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C49CF971F1F647B00B0C443 /* RichTextEditDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RichTextEditDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C49CF9B1F1F647B00B0C443 /* RichTextEditDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichTextEditDemoUITests.m; sourceTree = "<group>"; };
+		9C49CF9D1F1F647B00B0C443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C49CFAF1F1F654800B0C443 /* MMRichTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichTextCell.h; sourceTree = "<group>"; };
+		9C49CFB01F1F654800B0C443 /* MMRichTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichTextCell.m; sourceTree = "<group>"; };
+		9C49CFB21F1F655500B0C443 /* MMRichImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichImageCell.h; sourceTree = "<group>"; };
+		9C49CFB31F1F655500B0C443 /* MMRichImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichImageCell.m; sourceTree = "<group>"; };
+		9C49CFB51F1F660D00B0C443 /* RichTextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextEditViewController.h; sourceTree = "<group>"; };
+		9C49CFB61F1F660D00B0C443 /* RichTextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextEditViewController.m; sourceTree = "<group>"; };
+		9C49CFB81F1F67D200B0C443 /* MMRichTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichTextModel.h; sourceTree = "<group>"; };
+		9C49CFB91F1F67D200B0C443 /* MMRichTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichTextModel.m; sourceTree = "<group>"; };
+		9C49CFBB1F1F67E400B0C443 /* MMRichImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRichImageModel.h; sourceTree = "<group>"; };
+		9C49CFBC1F1F67E400B0C443 /* MMRichImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichImageModel.m; sourceTree = "<group>"; };
+		9C7F81E51F24E7C600716D15 /* MMFileUploadUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFileUploadUtil.h; sourceTree = "<group>"; };
+		9C7F81E61F24E7C600716D15 /* MMFileUploadUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFileUploadUtil.m; sourceTree = "<group>"; };
+		B7F4D93BA644288644541DF9 /* Pods-RichTextEditDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichTextEditDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RichTextEditDemo/Pods-RichTextEditDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C49CF701F1F647B00B0C443 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC9900AC4F1CDAE9BA88B32D /* libPods-RichTextEditDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C49CF891F1F647B00B0C443 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C49CF941F1F647B00B0C443 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88B262CB78E881D6E25940F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7F4D93BA644288644541DF9 /* Pods-RichTextEditDemo.debug.xcconfig */,
+				755A0CBC25D4EFD4CE715BDA /* Pods-RichTextEditDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C1504AD1F2086B200070306 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				9C1504C11F21D0E100070306 /* UtilMacro.h */,
+				9C1504B51F208F2700070306 /* MMRichTextConfig.h */,
+				9C1504B61F208F2700070306 /* MMRichTextConfig.m */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		9C1504AE1F2089A100070306 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				9C1504D51F25D90900070306 /* UIImage+Util.h */,
+				9C1504D61F25D90900070306 /* UIImage+Util.m */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
+		9C1504CE1F22068C00070306 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				9C7F81E51F24E7C600716D15 /* MMFileUploadUtil.h */,
+				9C7F81E61F24E7C600716D15 /* MMFileUploadUtil.m */,
+				9C1504D21F25CE9E00070306 /* MMRichContentUtil.h */,
+				9C1504D31F25CE9E00070306 /* MMRichContentUtil.m */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		9C49CF6A1F1F647B00B0C443 = {
+			isa = PBXGroup;
+			children = (
+				9C49CF751F1F647B00B0C443 /* RichTextEditDemo */,
+				9C49CF8F1F1F647B00B0C443 /* RichTextEditDemoTests */,
+				9C49CF9A1F1F647B00B0C443 /* RichTextEditDemoUITests */,
+				9C49CF741F1F647B00B0C443 /* Products */,
+				88B262CB78E881D6E25940F2 /* Pods */,
+				B11CE0094B1695A000905EFE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9C49CF741F1F647B00B0C443 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CF731F1F647B00B0C443 /* RichTextEditDemo.app */,
+				9C49CF8C1F1F647B00B0C443 /* RichTextEditDemoTests.xctest */,
+				9C49CF971F1F647B00B0C443 /* RichTextEditDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C49CF751F1F647B00B0C443 /* RichTextEditDemo */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CFA91F1F64AB00B0C443 /* RichTextEdit */,
+				9C49CF791F1F647B00B0C443 /* AppDelegate.h */,
+				9C49CF7A1F1F647B00B0C443 /* AppDelegate.m */,
+				9C49CF7C1F1F647B00B0C443 /* ViewController.h */,
+				9C49CF7D1F1F647B00B0C443 /* ViewController.m */,
+				9C49CF7F1F1F647B00B0C443 /* Main.storyboard */,
+				9C49CF821F1F647B00B0C443 /* Assets.xcassets */,
+				9C49CF841F1F647B00B0C443 /* LaunchScreen.storyboard */,
+				9C49CF871F1F647B00B0C443 /* Info.plist */,
+				9C49CF761F1F647B00B0C443 /* Supporting Files */,
+			);
+			path = RichTextEditDemo;
+			sourceTree = "<group>";
+		};
+		9C49CF761F1F647B00B0C443 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CF771F1F647B00B0C443 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C49CF8F1F1F647B00B0C443 /* RichTextEditDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CF901F1F647B00B0C443 /* RichTextEditDemoTests.m */,
+				9C49CF921F1F647B00B0C443 /* Info.plist */,
+			);
+			path = RichTextEditDemoTests;
+			sourceTree = "<group>";
+		};
+		9C49CF9A1F1F647B00B0C443 /* RichTextEditDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CF9B1F1F647B00B0C443 /* RichTextEditDemoUITests.m */,
+				9C49CF9D1F1F647B00B0C443 /* Info.plist */,
+			);
+			path = RichTextEditDemoUITests;
+			sourceTree = "<group>";
+		};
+		9C49CFA91F1F64AB00B0C443 /* RichTextEdit */ = {
+			isa = PBXGroup;
+			children = (
+				9C1504CE1F22068C00070306 /* utils */,
+				9C1504AE1F2089A100070306 /* categories */,
+				9C1504AD1F2086B200070306 /* config */,
+				9C49CFAD1F1F64F100B0C443 /* model */,
+				9C49CFAE1F1F64F100B0C443 /* view */,
+				9C49CFB51F1F660D00B0C443 /* RichTextEditViewController.h */,
+				9C49CFB61F1F660D00B0C443 /* RichTextEditViewController.m */,
+			);
+			path = RichTextEdit;
+			sourceTree = "<group>";
+		};
+		9C49CFAD1F1F64F100B0C443 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9C49CFB81F1F67D200B0C443 /* MMRichTextModel.h */,
+				9C49CFB91F1F67D200B0C443 /* MMRichTextModel.m */,
+				9C49CFBB1F1F67E400B0C443 /* MMRichImageModel.h */,
+				9C49CFBC1F1F67E400B0C443 /* MMRichImageModel.m */,
+				9C1504C81F21F99400070306 /* MMRichTitleModel.h */,
+				9C1504C91F21F99400070306 /* MMRichTitleModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9C49CFAE1F1F64F100B0C443 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9C1504BE1F21CC1100070306 /* MMRichEditAccessoryView.h */,
+				9C1504BF1F21CC1100070306 /* MMRichEditAccessoryView.m */,
+				9C1504C21F21F1AB00070306 /* MMPlaceHolderTextView.h */,
+				9C1504C31F21F1AB00070306 /* MMPlaceHolderTextView.m */,
+				9C1504BB1F209BC300070306 /* MMTextView.h */,
+				9C1504BC1F209BC300070306 /* MMTextView.m */,
+				9C49CFAF1F1F654800B0C443 /* MMRichTextCell.h */,
+				9C49CFB01F1F654800B0C443 /* MMRichTextCell.m */,
+				9C1504C51F21F8D200070306 /* MMRichTitleCell.h */,
+				9C1504C61F21F8D200070306 /* MMRichTitleCell.m */,
+				9C49CFB21F1F655500B0C443 /* MMRichImageCell.h */,
+				9C49CFB31F1F655500B0C443 /* MMRichImageCell.m */,
+				9C1504CB1F2203CE00070306 /* MMBaseRichContentCell.h */,
+				9C1504CC1F2203CE00070306 /* MMBaseRichContentCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		B11CE0094B1695A000905EFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47B30B5809E4701C8F0B2CD0 /* libPods-RichTextEditDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C49CF721F1F647B00B0C443 /* RichTextEditDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C49CFA01F1F647B00B0C443 /* Build configuration list for PBXNativeTarget "RichTextEditDemo" */;
+			buildPhases = (
+				F9632B788B60069055E67AA4 /* [CP] Check Pods Manifest.lock */,
+				9C49CF6F1F1F647B00B0C443 /* Sources */,
+				9C49CF701F1F647B00B0C443 /* Frameworks */,
+				9C49CF711F1F647B00B0C443 /* Resources */,
+				F3FE6376EB4E9A5AB2321E47 /* [CP] Embed Pods Frameworks */,
+				03F0746F12C909A63D0810E7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RichTextEditDemo;
+			productName = RichTextEditDemo;
+			productReference = 9C49CF731F1F647B00B0C443 /* RichTextEditDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C49CF8B1F1F647B00B0C443 /* RichTextEditDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C49CFA31F1F647B00B0C443 /* Build configuration list for PBXNativeTarget "RichTextEditDemoTests" */;
+			buildPhases = (
+				9C49CF881F1F647B00B0C443 /* Sources */,
+				9C49CF891F1F647B00B0C443 /* Frameworks */,
+				9C49CF8A1F1F647B00B0C443 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C49CF8E1F1F647B00B0C443 /* PBXTargetDependency */,
+			);
+			name = RichTextEditDemoTests;
+			productName = RichTextEditDemoTests;
+			productReference = 9C49CF8C1F1F647B00B0C443 /* RichTextEditDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C49CF961F1F647B00B0C443 /* RichTextEditDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C49CFA61F1F647B00B0C443 /* Build configuration list for PBXNativeTarget "RichTextEditDemoUITests" */;
+			buildPhases = (
+				9C49CF931F1F647B00B0C443 /* Sources */,
+				9C49CF941F1F647B00B0C443 /* Frameworks */,
+				9C49CF951F1F647B00B0C443 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C49CF991F1F647B00B0C443 /* PBXTargetDependency */,
+			);
+			name = RichTextEditDemoUITests;
+			productName = RichTextEditDemoUITests;
+			productReference = 9C49CF971F1F647B00B0C443 /* RichTextEditDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C49CF6B1F1F647B00B0C443 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = aron;
+				TargetAttributes = {
+					9C49CF721F1F647B00B0C443 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					9C49CF8B1F1F647B00B0C443 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C49CF721F1F647B00B0C443;
+					};
+					9C49CF961F1F647B00B0C443 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C49CF721F1F647B00B0C443;
+					};
+				};
+			};
+			buildConfigurationList = 9C49CF6E1F1F647B00B0C443 /* Build configuration list for PBXProject "RichTextEditDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C49CF6A1F1F647B00B0C443;
+			productRefGroup = 9C49CF741F1F647B00B0C443 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C49CF721F1F647B00B0C443 /* RichTextEditDemo */,
+				9C49CF8B1F1F647B00B0C443 /* RichTextEditDemoTests */,
+				9C49CF961F1F647B00B0C443 /* RichTextEditDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C49CF711F1F647B00B0C443 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C49CF861F1F647B00B0C443 /* LaunchScreen.storyboard in Resources */,
+				9C49CF831F1F647B00B0C443 /* Assets.xcassets in Resources */,
+				9C49CF811F1F647B00B0C443 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C49CF8A1F1F647B00B0C443 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C49CF951F1F647B00B0C443 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03F0746F12C909A63D0810E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RichTextEditDemo/Pods-RichTextEditDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3FE6376EB4E9A5AB2321E47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RichTextEditDemo/Pods-RichTextEditDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9632B788B60069055E67AA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C49CF6F1F1F647B00B0C443 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1504D71F25D90900070306 /* UIImage+Util.m in Sources */,
+				9C1504CA1F21F99400070306 /* MMRichTitleModel.m in Sources */,
+				9C7F81E71F24E7C600716D15 /* MMFileUploadUtil.m in Sources */,
+				9C1504BD1F209BC300070306 /* MMTextView.m in Sources */,
+				9C1504B71F208F2700070306 /* MMRichTextConfig.m in Sources */,
+				9C49CF7E1F1F647B00B0C443 /* ViewController.m in Sources */,
+				9C49CFBD1F1F67E400B0C443 /* MMRichImageModel.m in Sources */,
+				9C1504C01F21CC1100070306 /* MMRichEditAccessoryView.m in Sources */,
+				9C49CFB41F1F655500B0C443 /* MMRichImageCell.m in Sources */,
+				9C49CF7B1F1F647B00B0C443 /* AppDelegate.m in Sources */,
+				9C49CFB11F1F654800B0C443 /* MMRichTextCell.m in Sources */,
+				9C49CF781F1F647B00B0C443 /* main.m in Sources */,
+				9C1504CD1F2203CE00070306 /* MMBaseRichContentCell.m in Sources */,
+				9C49CFBA1F1F67D200B0C443 /* MMRichTextModel.m in Sources */,
+				9C49CFB71F1F660D00B0C443 /* RichTextEditViewController.m in Sources */,
+				9C1504C41F21F1AB00070306 /* MMPlaceHolderTextView.m in Sources */,
+				9C1504C71F21F8D200070306 /* MMRichTitleCell.m in Sources */,
+				9C1504D41F25CE9E00070306 /* MMRichContentUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C49CF881F1F647B00B0C443 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C49CF911F1F647B00B0C443 /* RichTextEditDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C49CF931F1F647B00B0C443 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C49CF9C1F1F647B00B0C443 /* RichTextEditDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C49CF8E1F1F647B00B0C443 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C49CF721F1F647B00B0C443 /* RichTextEditDemo */;
+			targetProxy = 9C49CF8D1F1F647B00B0C443 /* PBXContainerItemProxy */;
+		};
+		9C49CF991F1F647B00B0C443 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C49CF721F1F647B00B0C443 /* RichTextEditDemo */;
+			targetProxy = 9C49CF981F1F647B00B0C443 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C49CF7F1F1F647B00B0C443 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C49CF801F1F647B00B0C443 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C49CF841F1F647B00B0C443 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C49CF851F1F647B00B0C443 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C49CF9E1F1F647B00B0C443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C49CF9F1F1F647B00B0C443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C49CFA11F1F647B00B0C443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7F4D93BA644288644541DF9 /* Pods-RichTextEditDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RichTextEditDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YTT.RichTextEditDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9C49CFA21F1F647B00B0C443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 755A0CBC25D4EFD4CE715BDA /* Pods-RichTextEditDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RichTextEditDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YTT.RichTextEditDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9C49CFA41F1F647B00B0C443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RichTextEditDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YTT.RichTextEditDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RichTextEditDemo.app/RichTextEditDemo";
+			};
+			name = Debug;
+		};
+		9C49CFA51F1F647B00B0C443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RichTextEditDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YTT.RichTextEditDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RichTextEditDemo.app/RichTextEditDemo";
+			};
+			name = Release;
+		};
+		9C49CFA71F1F647B00B0C443 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RichTextEditDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YTT.RichTextEditDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RichTextEditDemo;
+			};
+			name = Debug;
+		};
+		9C49CFA81F1F647B00B0C443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RichTextEditDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YTT.RichTextEditDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RichTextEditDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C49CF6E1F1F647B00B0C443 /* Build configuration list for PBXProject "RichTextEditDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C49CF9E1F1F647B00B0C443 /* Debug */,
+				9C49CF9F1F1F647B00B0C443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C49CFA01F1F647B00B0C443 /* Build configuration list for PBXNativeTarget "RichTextEditDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C49CFA11F1F647B00B0C443 /* Debug */,
+				9C49CFA21F1F647B00B0C443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C49CFA31F1F647B00B0C443 /* Build configuration list for PBXNativeTarget "RichTextEditDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C49CFA41F1F647B00B0C443 /* Debug */,
+				9C49CFA51F1F647B00B0C443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C49CFA61F1F647B00B0C443 /* Build configuration list for PBXNativeTarget "RichTextEditDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C49CFA71F1F647B00B0C443 /* Debug */,
+				9C49CFA81F1F647B00B0C443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C49CF6B1F1F647B00B0C443 /* Project object */;
+}
