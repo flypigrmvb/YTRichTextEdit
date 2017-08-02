@@ -38,8 +38,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UL-wf-b4W">
-                                <rect key="frame" x="117.5" y="84" width="85" height="30"/>
-                                <state key="normal" title="RichTextEdit"/>
+                                <rect key="frame" x="129.5" y="84" width="62" height="30"/>
+                                <state key="normal" title="开始编辑"/>
                                 <connections>
                                     <action selector="onRichTextEditClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnQ-qH-FUO"/>
                                 </connections>
