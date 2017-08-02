@@ -1,9 +1,9 @@
 //
 //  PlaceHolderTextView.m
-//  mmosite
+//  RichTextEditDemo
 //
 //  Created by aron on 2017/3/10.
-//  Copyright © 2017年 qingot. All rights reserved.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #import "MMPlaceHolderTextView.h"
@@ -136,6 +136,20 @@
     [self resetPlaceHolderFrame];
 }
 
+- (void)setText:(NSString *)text {
+    [super setText:text];
+    
+    if (_showPlaceHolder) {
+        if (self.text != nil && self.text.length > 0) {
+            _placeHolderLabel.hidden = YES;
+        }else {
+            _placeHolderLabel.hidden = NO;
+        }
+    } else {
+        _placeHolderLabel.hidden = YES;
+    }
+}
+
 
 #pragma mark - ......::::::: private :::::::......
 // 重新设置PlaceHolder的Frame
@@ -165,6 +179,7 @@
 }
 
 - (void)setShowPlaceHolder:(BOOL)showPlaceHolder {
+    _showPlaceHolder = showPlaceHolder;
     if (showPlaceHolder) {
         if (self.text != nil && self.text.length > 0) {
             _placeHolderLabel.hidden = YES;

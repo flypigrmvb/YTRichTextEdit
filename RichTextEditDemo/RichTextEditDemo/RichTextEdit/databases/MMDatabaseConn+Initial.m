@@ -8,11 +8,10 @@
 
 #import "MMDatabaseConn+Initial.h"
 #import <pthread.h>
-#import "MMMessage.h"
 #import "MMDraftModel.h"
-#import "GVUserDefaults+MMProperties.h"
 
-#define kDBCache       @"DBCache"
+#define kDBCache            @"DBCache"
+#define kDBVERSION          @"DBVersion"
 
 /** 当前使用的数据库版本，程序会根据版本号的改变升级数据库以及迁移旧的数据 */
 static NSString* DB_Version = @"1.0.1";
@@ -33,7 +32,7 @@ static NSString* DB_NAME = @"DB.sqlite";
     if (appGroupURL) {
         emojiDBURL = [appGroupURL URLByAppendingPathComponent:DB_NAME];
     } else {
-        NSString *DBPath = [Source createDirectory:kDBCache];
+        NSString *DBPath = [self createDirectory:kDBCache];
         emojiDBURL = [NSURL fileURLWithPath:[DBPath stringByAppendingPathComponent:DB_NAME]];
     }
     self.DBFilePath = [emojiDBURL path];
@@ -51,6 +50,23 @@ static NSString* DB_NAME = @"DB.sqlite";
         [self initTables];
     });
 }
+
+// 创建文件夹
+- (NSString *)createDirectory:(NSString *)path {
+    BOOL isDir = NO;
+    NSString* cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *finalPath = [cachePath stringByAppendingPathComponent:path];
+    
+    if (!([[NSFileManager defaultManager] fileExistsAtPath:finalPath isDirectory:&isDir]
+          && isDir)) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:finalPath
+                                 withIntermediateDirectories :YES
+                                                  attributes :nil
+                                                       error :nil];
+    }
+    return finalPath;
+}
+
 
 /**
  初始化默认数据
@@ -82,7 +98,6 @@ static NSString* DB_NAME = @"DB.sqlite";
  *  初始化数据表
  */
 -(void)initTables{
-    [MMMessage createTableIfNotExists];
     [MMDraftModel createTableIfNotExists];
 }
 
@@ -99,7 +114,7 @@ static NSString* DB_NAME = @"DB.sqlite";
 
 // 创建新的临时表，把数据导入临时表，然后用临时表替换原表
 - (void)baseDBVersionControl {
-    NSString * version_old = ValueOrEmpty(MMUserDefault.dbVersion);
+    NSString * version_old = [[NSUserDefaults standardUserDefaults] stringForKey:kDBVERSION];
     NSString * version_new = [NSString stringWithFormat:@"%@", DB_Version];
     NSLog(@"dbVersionControl before: %@ after: %@",version_old,version_new);
     
@@ -164,10 +179,11 @@ static NSString* DB_NAME = @"DB.sqlite";
             [db commit];
         }];
         
-        MMUserDefault.dbVersion = version_new;
-
+        [[NSUserDefaults standardUserDefaults] setObject:version_new forKey:kDBVERSION];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     } else {
-        MMUserDefault.dbVersion = version_new;
+        [[NSUserDefaults standardUserDefaults] setObject:version_new forKey:kDBVERSION];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 

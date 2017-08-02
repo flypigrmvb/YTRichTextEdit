@@ -1,13 +1,15 @@
 //
 //  MMDraftModel.h
-//  mmosite
+//  RichTextEditDemo
 //
 //  Created by aron on 2017/7/25.
-//  Copyright © 2017年 qingot. All rights reserved.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "MMBaseRichContentModel.h"
+#import <YYModel.h>
+
 
 @interface MMDraftModel : NSObject <YYModel>
 @property (nonatomic, assign) NSInteger draftId;

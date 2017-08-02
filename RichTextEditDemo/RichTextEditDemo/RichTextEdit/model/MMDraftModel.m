@@ -1,17 +1,16 @@
 //
 //  MMDraftModel.m
-//  mmosite
+//  RichTextEditDemo
 //
 //  Created by aron on 2017/7/25.
-//  Copyright © 2017年 qingot. All rights reserved.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #import "MMDraftModel.h"
 #import "MMDatabaseConn.h"
 #import <YYModel.h>
-#import "NSString+NSDate.h"
 #import "MMDraftUtil.h"
-#import "MMAccountManager.h"
+#import "UtilMacro.h"
 
 static NSString* draft_tableName = @"t_draft";
 
@@ -34,7 +33,7 @@ static NSString* draft_tableName = @"t_draft";
 + (void)retriveDraftWithCompletion:(void (^)(NSArray *aDrafts, NSError *aError))aCompletionBlock {
     NSMutableArray *results = [NSMutableArray array];
     NSMutableString* sql = [NSMutableString stringWithFormat:@"SELECT * FROM %@ WHERE 1=1", draft_tableName];
-    [sql appendFormat:@" AND userId = '%@'", [MMAccountManager sharedInstance].account.userID];
+    [sql appendFormat:@" AND userId = '%@'", @"TEST_USER_ID"];
     [sql appendString:@" ORDER BY modifyTimeString DESC"];
     [[MMDatabaseConn sharedInstance].databaseQueue inDatabase:^(FMDatabase *db) {
         FMResultSet *set = [db executeQuery:sql];

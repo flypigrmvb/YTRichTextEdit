@@ -16,6 +16,7 @@
 @property (nonatomic, weak) id<RichTextEditDelegate> delegate;
 
 - (void)updateWithData:(id)data indexPath:(NSIndexPath*)indexPath;
-- (void)beginEditing;
+- (void)mm_beginEditing;
+- (void)mm_endEditing;
 
 @end

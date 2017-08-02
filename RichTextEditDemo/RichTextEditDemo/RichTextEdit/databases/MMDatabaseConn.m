@@ -1,9 +1,9 @@
 //
 //  MMDatabaseConn
-//  mmosite
+//  RichTextEditDemo
 //
 //  Created by aron on 2017/5/3.
-//  Copyright © 2017年 qingot. All rights reserved.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #define DBMainThreadCheck() NSAssert([NSThread mainThread] == NO,  \
@@ -12,7 +12,7 @@
 #import "MMDatabaseConn.h"
 #import <sqlite3.h>
 #import <pthread.h>
-#import "MMDatabaseManager.h"
+
 
 @interface MMDatabaseConn (){
     pthread_mutex_t _dbLock;
@@ -29,15 +29,6 @@ DEF_SINGLETON
     self = [super init];
     if (self) {
         pthread_mutex_init(&_dbLock, NULL);
-        
-        [[NSNotificationCenter defaultCenter]
-         addObserver:self
-         selector:@selector(receiveMemoryWarning)
-         name:UIApplicationDidReceiveMemoryWarningNotification
-         object:nil];
-        
-        // 处理数据变化
-        [MMDatabaseManager sharedInstance];
     }
     return self;
 }

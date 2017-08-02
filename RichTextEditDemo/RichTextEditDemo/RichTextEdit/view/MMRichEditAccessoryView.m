@@ -93,4 +93,11 @@
     }
 }
 
+
+#pragma mark - ......::::::: public :::::::......
+
+- (void)setHiddenActionButtons:(BOOL)hideActionButtons {
+    self.picImageIcon.hidden = hideActionButtons;
+}
+
 @end

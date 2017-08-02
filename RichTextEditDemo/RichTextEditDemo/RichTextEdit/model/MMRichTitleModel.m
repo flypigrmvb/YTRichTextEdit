@@ -7,6 +7,7 @@
 //
 
 #import "MMRichTitleModel.h"
+#import "UtilMacro.h"
 
 @implementation MMRichTitleModel
 
@@ -14,10 +15,17 @@
 {
     self = [super init];
     if (self) {
-        _titleViewFrame = CGRectMake(0, 0, 300, 58);
+        // TextHeight + separatorHeight
+        _extraContentHeight = convertLength(7.5);
+        _titleContentHeight = convertLength(58);
         _textContent = @"";
+        self.richContentType = MMRichContentTypeTitle;
     }
     return self;
+}
+
+- (CGFloat)cellHeight {
+    return _extraContentHeight + _titleContentHeight;
 }
 
 @end

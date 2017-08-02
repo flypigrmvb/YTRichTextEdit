@@ -16,7 +16,8 @@
 @property (nonatomic, weak) id<RichTextEditDelegate> delegate;
 
 - (void)updateWithData:(id)data;
-- (void)beginEditing;
+- (void)mm_beginEditing;
+- (void)mm_endEditing;
 
 - (void)getPreFlag:(BOOL*)isPre postFlag:(BOOL*)isPost;
 

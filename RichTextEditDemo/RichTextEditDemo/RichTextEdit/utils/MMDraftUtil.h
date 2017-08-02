@@ -1,14 +1,14 @@
 //
 //  MMDraftUtil.h
-//  mmosite
+//  RichTextEditDemo
 //
 //  Created by aron on 2017/7/25.
-//  Copyright © 2017年 qingot. All rights reserved.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@class MMDraftModel, MMBaseRichContentModel, MMDraftViewModel, MMRichImageModel;
+@class MMDraftModel, MMBaseRichContentModel, MMRichImageModel;
 
 @interface MMDraftUtil : NSObject
 
@@ -27,7 +27,5 @@
 + (MMDraftModel*)draftModelWithTitleModel:(MMBaseRichContentModel*)titleModel contents:(NSArray<MMBaseRichContentModel*>*)contents tid:(NSString*)tid draftId:(NSInteger)draftId ;
 // 更新草稿修改时间
 + (void)updateModifyTimeWithDraftData:(MMDraftModel*)draftData;
-// 模型转换
-+ (NSArray<MMDraftViewModel*>*)draftViewModelsFromDraftModels:(NSArray<MMDraftModel*>*)draftModels;
 
 @end

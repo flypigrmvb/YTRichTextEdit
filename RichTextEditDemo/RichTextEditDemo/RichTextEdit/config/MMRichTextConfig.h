@@ -26,7 +26,10 @@
 @property (nonatomic, assign, readonly) CGFloat editTitleAreaRightPadding;
 @property (nonatomic, assign, readonly) CGFloat editTitleAreaTopPadding;
 @property (nonatomic, assign, readonly) CGFloat editTitleAreaBottomPadding;
-
+@property (nonatomic, assign, readonly) NSInteger titleMaxCount;
+@property (nonatomic, assign, readonly) NSInteger maxImageCount;
+@property (nonatomic, assign, readonly) NSInteger maxTextContentCount;
+@property (nonatomic, assign, readonly) NSInteger minImageContentCellHeight;
 
 @property (nonatomic, strong, readonly) UIFont* defaultEditContentFont;
 @property (nonatomic, strong, readonly) UIFont* defaultEditTitleFont;

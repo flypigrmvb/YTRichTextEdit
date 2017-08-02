@@ -8,12 +8,26 @@
 
 #import "MMRichImageModel.h"
 #import "MMRichTextConfig.h"
+#import "MMRichContentUtil.h"
 
 @interface MMRichImageModel ()
 @property (nonatomic, strong) NSAttributedString* attrString;
 @end
 
 @implementation MMRichImageModel
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.richContentType = MMRichContentTypeImage;
+    }
+    return self;
+}
+
++ (nullable NSArray<NSString *> *)modelPropertyWhitelist {
+    return @[@"localImageName", @"remoteImageUrlString", @"imageContentHeight", @"uploadProgress", @"isFailed", @"isDone", @"richContentType"];
+}
 
 /**
  显示图片的属性文字
@@ -33,12 +47,19 @@
         [attributedString insertAttributedString:attachmentString atIndex:0];
         _attrString = attributedString;
         
-        // 设置Size
-        CGRect tmpImageFrame = rect;
-        tmpImageFrame.size.height += MMEditConfig.editAreaTopPadding + MMEditConfig.editAreaBottomPadding;
-        _imageFrame = tmpImageFrame;
+        // 设置Height
+        if (_imageContentHeight <= 0) {
+            _imageContentHeight = MAX(rect.size.height + MMEditConfig.editAreaTopPadding + MMEditConfig.editAreaBottomPadding, MMEditConfig.minImageContentCellHeight);
+        }
     }
     return _attrString;
+}
+
+- (UIImage *)image {
+    if (!_image) {
+        _image = [UIImage imageWithContentsOfFile:[[MMRichContentUtil imageSavedLocalPath] stringByAppendingPathComponent:self.localImageName]];
+    }
+    return _image;
 }
 
 
@@ -81,7 +102,7 @@
 
 #pragma mark - ......::::::: UploadItemProtocal :::::::......
 - (NSData*)mm_uploadData {
-    return UIImageJPEGRepresentation(_image, 0.6);
+    return UIImageJPEGRepresentation(_image, 0.5);
 }
 
 - (NSURL*)mm_uploadFileURL {

@@ -18,6 +18,9 @@
 @property (nonatomic, strong) MMTextView* textView;
 @property (nonatomic, strong) UIView* separatorView;
 @property (nonatomic, strong) MMRichTitleModel* titleModel;
+
+@property (nonatomic, assign) BOOL isEditing;
+
 @end
 
 
@@ -33,6 +36,7 @@
 
 - (void)dealloc {
     _textView.delegate = nil;
+    [[NSNotificationCenter defaultCenter ] removeObserver:self];
 }
 
 - (void)setupUI {
@@ -47,8 +51,10 @@
         make.left.equalTo(self).offset(convertLength(20));
         make.right.equalTo(self).offset(-convertLength(20));
         make.bottom.equalTo(self).offset(-convertLength(0.5));
-        make.height.equalTo(@(convertLength(0.5)));
+        make.height.equalTo(@(convertLength(7.5)));
     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:) name:UITextViewTextDidChangeNotification object:nil];
 }
 
 - (void)updateWithData:(id)data indexPath:(NSIndexPath*)indexPath {
@@ -60,22 +66,28 @@
         [self.textView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.equalTo(self);
             make.bottom.equalTo(self).priority(900);
-            make.height.equalTo(@(_titleModel.titleViewFrame.size.height));
+            make.height.equalTo(@(_titleModel.titleContentHeight));
         }];
+        
         // Content
-        _textView.text = _titleModel.textContent;
+        self.textView.text = _titleModel.textContent;
     }
 }
 
-- (void)beginEditing {
-    [_textView becomeFirstResponder];
+- (void)mm_beginEditing {
+    [self.textView becomeFirstResponder];
     
-    if (![_textView.text isEqualToString:_titleModel.textContent]) {
-        _textView.text = _titleModel.textContent;
+    if (![self.textView.text isEqualToString:_titleModel.textContent]) {
+        self.textView.text = _titleModel.textContent;
         
         // 手动调用回调方法修改
-        [self textViewDidChange:_textView];
+        [self textViewDidChange:self.textView];
     }
+}
+
+- (void)mm_endEditing {
+    BOOL result = [self.textView resignFirstResponder];
+    NSLog(@"result = %d", result);
 }
 
 
@@ -87,7 +99,9 @@
         _textView.font = MMEditConfig.defaultEditTitleFont;
         _textView.textContainerInset = UIEdgeInsetsMake(MMEditConfig.editTitleAreaTopPadding, MMEditConfig.editTitleAreaLeftPadding, MMEditConfig.editTitleAreaBottomPadding, MMEditConfig.editTitleAreaRightPadding);
         _textView.scrollEnabled = NO;
-        _textView.placeHolder = _(@"Title");
+        _textView.maxInputs = MMEditConfig.titleMaxCount;
+        _textView.placeHolder = @"请输入标题";
+        _textView.showPlaceHolder = YES;
         _textView.delegate = self;
         _textView.mm_delegate = self;
     }
@@ -97,7 +111,15 @@
 - (UIView *)separatorView {
     if (!_separatorView) {
         _separatorView = [UIView new];
-        _separatorView.backgroundColor = [UIColor lightGrayColor];
+        _separatorView.backgroundColor = [UIColor whiteColor];
+        
+        UIView* separatorLine = [UIView new];
+        separatorLine.backgroundColor = [UIColor lightGrayColor];
+        [_separatorView addSubview:separatorLine];
+        [separatorLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(convertLength(0.5)));
+            make.left.top.right.equalTo(_separatorView);
+        }];
     }
     return _separatorView;
 }
@@ -106,14 +128,44 @@
 #pragma mark - ......::::::: UITextViewDelegate :::::::......
 
 - (void)textViewDidChange:(UITextView *)textView {
-    CGRect frame = textView.frame;
+    
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    if ([self.delegate respondsToSelector:@selector(mm_shouldShowAccessoryView:)]) {
+        [self.delegate mm_shouldShowAccessoryView:NO];
+    }
+    self.isEditing = YES;
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    self.isEditing = NO;
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    NSLog(@"");
+    if (NO == self.isEditing) {
+        // 隐藏键盘TextView显示的文字特殊处理
+        self.isEditing = YES;
+        return NO;
+    }
+    if (textView.text.length + text.length >= MMEditConfig.titleMaxCount) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)handleTextViewDidChange {
+    CGRect frame = self.textView.frame;
     CGSize constraintSize = CGSizeMake(frame.size.width, MAXFLOAT);
-    CGSize size = [textView sizeThatFits:constraintSize];
+    CGSize size = [self.textView sizeThatFits:constraintSize];
     
     // 更新模型数据
-    _titleModel.titleViewFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, size.height);
-    _titleModel.textContent = textView.text;
-    _titleModel.selectedRange = textView.selectedRange;
+    _titleModel.titleContentHeight = size.height;
+    _titleModel.textContent = self.textView.text;
+    _titleModel.selectedRange = self.textView.selectedRange;
     _titleModel.isEditing = YES;
     
     if (ABS(_textView.frame.size.height - size.height) > 5) {
@@ -121,7 +173,7 @@
         [self.textView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.equalTo(self);
             make.bottom.equalTo(self).priority(900);
-            make.height.equalTo(@(_titleModel.titleViewFrame.size.height));
+            make.height.equalTo(@(_titleModel.titleContentHeight));
         }];
         
         UITableView* tableView = [self containerTableView];
@@ -129,5 +181,18 @@
         [tableView endUpdates];
     }
 }
+
+
+#pragma mark - ......::::::: notification :::::::......
+
+- (void)textDidChange:(NSNotification*)notification {
+    NSObject* obj = notification.object;
+    if (obj == self.textView) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self handleTextViewDidChange];
+        });
+    }
+}
+
 
 @end

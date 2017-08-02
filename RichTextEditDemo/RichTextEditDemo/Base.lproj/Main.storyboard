@@ -44,51 +44,33 @@
                                     <action selector="onRichTextEditClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnQ-qH-FUO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCw-0P-Kb6">
-                                <rect key="frame" x="39.5" y="122" width="240" height="168"/>
-                                <state key="normal" title="Pick Picture"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wf1-6Y-fG5">
+                                <rect key="frame" x="0.0" y="134" width="320" height="434"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="onPIckerPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jvK-Hz-5uO"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="n4q-qb-OKk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rvW-4T-y4v"/>
                                 </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F50-kl-Y07">
-                                <rect key="frame" x="40" y="122" width="240" height="168"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="0.51728381849315064" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="8cz-Ts-SHX"/>
-                                    <constraint firstAttribute="height" constant="168" id="U7T-Vx-7O8"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lzv-xb-Eaz">
-                                <rect key="frame" x="136.5" y="298" width="47" height="30"/>
-                                <state key="normal" title="upload"/>
-                                <connections>
-                                    <action selector="onupload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lWS-LD-FQg"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Lzv-xb-Eaz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1M2-n1-Tdm"/>
-                            <constraint firstItem="F50-kl-Y07" firstAttribute="top" secondItem="3UL-wf-b4W" secondAttribute="bottom" constant="8" id="DlP-Mq-bc7"/>
-                            <constraint firstItem="F50-kl-Y07" firstAttribute="top" secondItem="QCw-0P-Kb6" secondAttribute="top" id="N9n-Am-meZ"/>
+                            <constraint firstItem="Wf1-6Y-fG5" firstAttribute="top" secondItem="3UL-wf-b4W" secondAttribute="bottom" constant="20" id="KqL-MZ-0pj"/>
                             <constraint firstItem="3UL-wf-b4W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="O62-YL-US1"/>
-                            <constraint firstItem="F50-kl-Y07" firstAttribute="leading" secondItem="QCw-0P-Kb6" secondAttribute="leading" id="fiQ-ev-eOq"/>
-                            <constraint firstItem="F50-kl-Y07" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="heZ-f6-OsT"/>
+                            <constraint firstAttribute="trailing" secondItem="Wf1-6Y-fG5" secondAttribute="trailing" id="TQZ-Js-zbs"/>
                             <constraint firstItem="3UL-wf-b4W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k2S-7S-j0M"/>
-                            <constraint firstItem="Lzv-xb-Eaz" firstAttribute="top" secondItem="QCw-0P-Kb6" secondAttribute="bottom" constant="8" id="mRv-wq-ioa"/>
-                            <constraint firstItem="F50-kl-Y07" firstAttribute="bottom" secondItem="QCw-0P-Kb6" secondAttribute="bottom" id="pu8-Io-r1D"/>
-                            <constraint firstItem="F50-kl-Y07" firstAttribute="trailing" secondItem="QCw-0P-Kb6" secondAttribute="trailing" id="tMX-ar-0fQ"/>
+                            <constraint firstItem="Wf1-6Y-fG5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ov4-QB-hYK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wf1-6Y-fG5" secondAttribute="bottom" id="rc9-tt-jY3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PWg-qL-1FB"/>
                     <connections>
-                        <outlet property="imageView" destination="F50-kl-Y07" id="NQV-w3-O7h"/>
+                        <outlet property="tableView" destination="Wf1-6Y-fG5" id="6he-M9-Up7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250.40000000000001" y="-137.18140929535232"/>
+            <point key="canvasLocation" x="-251.25" y="-137.32394366197184"/>
         </scene>
     </scenes>
 </document>

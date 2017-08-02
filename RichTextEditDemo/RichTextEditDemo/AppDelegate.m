@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MMDatabaseConn+Initial.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    // 数据库支持
+    [[MMDatabaseConn sharedInstance] initDBWithAppGroupURL:nil];
+    
     return YES;
 }
 

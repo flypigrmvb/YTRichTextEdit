@@ -34,6 +34,10 @@
         _editTitleAreaRightPadding = convertLength(20);
         _editTitleAreaTopPadding = convertLength(17);
         _editTitleAreaBottomPadding = convertLength(17);
+        _titleMaxCount = 200;
+        _maxImageCount = 10;
+        _maxTextContentCount = 20000;
+        _minImageContentCellHeight = convertLength(90);
         
         _defaultEditContentFont = [UIFont systemFontOfSize:16];
         _defaultEditTitleFont = [UIFont systemFontOfSize:20];

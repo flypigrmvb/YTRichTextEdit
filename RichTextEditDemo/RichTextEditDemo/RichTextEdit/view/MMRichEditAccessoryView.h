@@ -20,4 +20,6 @@
 
 @property (nonatomic, weak) id<MMRichEditAccessoryViewDelegate> delegate;
 
+- (void)setHiddenActionButtons:(BOOL)hideActionButtons;
+
 @end

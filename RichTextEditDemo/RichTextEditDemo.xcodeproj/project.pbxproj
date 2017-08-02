@@ -30,6 +30,13 @@
 		9C49CFBA1F1F67D200B0C443 /* MMRichTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFB91F1F67D200B0C443 /* MMRichTextModel.m */; };
 		9C49CFBD1F1F67E400B0C443 /* MMRichImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C49CFBC1F1F67E400B0C443 /* MMRichImageModel.m */; };
 		9C7F81E71F24E7C600716D15 /* MMFileUploadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7F81E61F24E7C600716D15 /* MMFileUploadUtil.m */; };
+		9CD8558C1F321C51007B3EDB /* MMBaseRichContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD855891F321C51007B3EDB /* MMBaseRichContentModel.m */; };
+		9CD8558D1F321C51007B3EDB /* MMDraftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8558B1F321C51007B3EDB /* MMDraftModel.m */; };
+		9CD855931F321D32007B3EDB /* MMDatabaseConn+Initial.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD855901F321D32007B3EDB /* MMDatabaseConn+Initial.m */; };
+		9CD855941F321D32007B3EDB /* MMDatabaseConn.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD855921F321D32007B3EDB /* MMDatabaseConn.m */; };
+		9CD855971F321F1F007B3EDB /* MMDraftUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD855961F321F1F007B3EDB /* MMDraftUtil.m */; };
+		9CD8559A1F321FB7007B3EDB /* NSString+NSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD855991F321FB7007B3EDB /* NSString+NSDate.m */; };
+		9CD8559D1F3225A5007B3EDB /* UITextView+RCSBackWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8559C1F3225A5007B3EDB /* UITextView+RCSBackWord.m */; };
 		FC9900AC4F1CDAE9BA88B32D /* libPods-RichTextEditDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B30B5809E4701C8F0B2CD0 /* libPods-RichTextEditDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +107,20 @@
 		9C49CFBC1F1F67E400B0C443 /* MMRichImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRichImageModel.m; sourceTree = "<group>"; };
 		9C7F81E51F24E7C600716D15 /* MMFileUploadUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFileUploadUtil.h; sourceTree = "<group>"; };
 		9C7F81E61F24E7C600716D15 /* MMFileUploadUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFileUploadUtil.m; sourceTree = "<group>"; };
+		9CD855881F321C51007B3EDB /* MMBaseRichContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseRichContentModel.h; sourceTree = "<group>"; };
+		9CD855891F321C51007B3EDB /* MMBaseRichContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseRichContentModel.m; sourceTree = "<group>"; };
+		9CD8558A1F321C51007B3EDB /* MMDraftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDraftModel.h; sourceTree = "<group>"; };
+		9CD8558B1F321C51007B3EDB /* MMDraftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDraftModel.m; sourceTree = "<group>"; };
+		9CD8558F1F321D32007B3EDB /* MMDatabaseConn+Initial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDatabaseConn+Initial.h"; sourceTree = "<group>"; };
+		9CD855901F321D32007B3EDB /* MMDatabaseConn+Initial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMDatabaseConn+Initial.m"; sourceTree = "<group>"; };
+		9CD855911F321D32007B3EDB /* MMDatabaseConn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDatabaseConn.h; sourceTree = "<group>"; };
+		9CD855921F321D32007B3EDB /* MMDatabaseConn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDatabaseConn.m; sourceTree = "<group>"; };
+		9CD855951F321F1F007B3EDB /* MMDraftUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDraftUtil.h; sourceTree = "<group>"; };
+		9CD855961F321F1F007B3EDB /* MMDraftUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDraftUtil.m; sourceTree = "<group>"; };
+		9CD855981F321FB7007B3EDB /* NSString+NSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSDate.h"; sourceTree = "<group>"; };
+		9CD855991F321FB7007B3EDB /* NSString+NSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSDate.m"; sourceTree = "<group>"; };
+		9CD8559B1F3225A5007B3EDB /* UITextView+RCSBackWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+RCSBackWord.h"; sourceTree = "<group>"; };
+		9CD8559C1F3225A5007B3EDB /* UITextView+RCSBackWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+RCSBackWord.m"; sourceTree = "<group>"; };
 		B7F4D93BA644288644541DF9 /* Pods-RichTextEditDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RichTextEditDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RichTextEditDemo/Pods-RichTextEditDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +174,8 @@
 			children = (
 				9C1504D51F25D90900070306 /* UIImage+Util.h */,
 				9C1504D61F25D90900070306 /* UIImage+Util.m */,
+				9CD855981F321FB7007B3EDB /* NSString+NSDate.h */,
+				9CD855991F321FB7007B3EDB /* NSString+NSDate.m */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -160,6 +183,8 @@
 		9C1504CE1F22068C00070306 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				9CD855951F321F1F007B3EDB /* MMDraftUtil.h */,
+				9CD855961F321F1F007B3EDB /* MMDraftUtil.m */,
 				9C7F81E51F24E7C600716D15 /* MMFileUploadUtil.h */,
 				9C7F81E61F24E7C600716D15 /* MMFileUploadUtil.m */,
 				9C1504D21F25CE9E00070306 /* MMRichContentUtil.h */,
@@ -236,6 +261,7 @@
 		9C49CFA91F1F64AB00B0C443 /* RichTextEdit */ = {
 			isa = PBXGroup;
 			children = (
+				9CD8558E1F321D32007B3EDB /* databases */,
 				9C1504CE1F22068C00070306 /* utils */,
 				9C1504AE1F2089A100070306 /* categories */,
 				9C1504AD1F2086B200070306 /* config */,
@@ -250,6 +276,10 @@
 		9C49CFAD1F1F64F100B0C443 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				9CD855881F321C51007B3EDB /* MMBaseRichContentModel.h */,
+				9CD855891F321C51007B3EDB /* MMBaseRichContentModel.m */,
+				9CD8558A1F321C51007B3EDB /* MMDraftModel.h */,
+				9CD8558B1F321C51007B3EDB /* MMDraftModel.m */,
 				9C49CFB81F1F67D200B0C443 /* MMRichTextModel.h */,
 				9C49CFB91F1F67D200B0C443 /* MMRichTextModel.m */,
 				9C49CFBB1F1F67E400B0C443 /* MMRichImageModel.h */,
@@ -277,8 +307,21 @@
 				9C49CFB31F1F655500B0C443 /* MMRichImageCell.m */,
 				9C1504CB1F2203CE00070306 /* MMBaseRichContentCell.h */,
 				9C1504CC1F2203CE00070306 /* MMBaseRichContentCell.m */,
+				9CD8559B1F3225A5007B3EDB /* UITextView+RCSBackWord.h */,
+				9CD8559C1F3225A5007B3EDB /* UITextView+RCSBackWord.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		9CD8558E1F321D32007B3EDB /* databases */ = {
+			isa = PBXGroup;
+			children = (
+				9CD8558F1F321D32007B3EDB /* MMDatabaseConn+Initial.h */,
+				9CD855901F321D32007B3EDB /* MMDatabaseConn+Initial.m */,
+				9CD855911F321D32007B3EDB /* MMDatabaseConn.h */,
+				9CD855921F321D32007B3EDB /* MMDatabaseConn.m */,
+			);
+			path = databases;
 			sourceTree = "<group>";
 		};
 		B11CE0094B1695A000905EFE /* Frameworks */ = {
@@ -477,15 +520,22 @@
 				9C1504CA1F21F99400070306 /* MMRichTitleModel.m in Sources */,
 				9C7F81E71F24E7C600716D15 /* MMFileUploadUtil.m in Sources */,
 				9C1504BD1F209BC300070306 /* MMTextView.m in Sources */,
+				9CD8559D1F3225A5007B3EDB /* UITextView+RCSBackWord.m in Sources */,
 				9C1504B71F208F2700070306 /* MMRichTextConfig.m in Sources */,
 				9C49CF7E1F1F647B00B0C443 /* ViewController.m in Sources */,
+				9CD855931F321D32007B3EDB /* MMDatabaseConn+Initial.m in Sources */,
 				9C49CFBD1F1F67E400B0C443 /* MMRichImageModel.m in Sources */,
 				9C1504C01F21CC1100070306 /* MMRichEditAccessoryView.m in Sources */,
 				9C49CFB41F1F655500B0C443 /* MMRichImageCell.m in Sources */,
 				9C49CF7B1F1F647B00B0C443 /* AppDelegate.m in Sources */,
+				9CD855971F321F1F007B3EDB /* MMDraftUtil.m in Sources */,
 				9C49CFB11F1F654800B0C443 /* MMRichTextCell.m in Sources */,
+				9CD8558C1F321C51007B3EDB /* MMBaseRichContentModel.m in Sources */,
+				9CD8559A1F321FB7007B3EDB /* NSString+NSDate.m in Sources */,
 				9C49CF781F1F647B00B0C443 /* main.m in Sources */,
+				9CD8558D1F321C51007B3EDB /* MMDraftModel.m in Sources */,
 				9C1504CD1F2203CE00070306 /* MMBaseRichContentCell.m in Sources */,
+				9CD855941F321D32007B3EDB /* MMDatabaseConn.m in Sources */,
 				9C49CFBA1F1F67D200B0C443 /* MMRichTextModel.m in Sources */,
 				9C49CFB71F1F660D00B0C443 /* RichTextEditViewController.m in Sources */,
 				9C1504C41F21F1AB00070306 /* MMPlaceHolderTextView.m in Sources */,

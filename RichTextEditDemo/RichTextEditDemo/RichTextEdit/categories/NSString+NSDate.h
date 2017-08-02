@@ -10,4 +10,7 @@
 
 @interface NSString (NSDate)
 
+- (NSDate*)yyyyMMddTHHmmssZDate;
++ (NSString*)yyyyMMddTHHmmssZDateStringFromDate:(NSDate*)date;
+
 @end

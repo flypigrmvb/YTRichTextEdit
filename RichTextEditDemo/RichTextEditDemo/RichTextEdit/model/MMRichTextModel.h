@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MMBaseRichContentModel.h"
+#import <YYModel.h>
 
-@interface MMRichTextModel : NSObject
+@interface MMRichTextModel : MMBaseRichContentModel <YYModel>
 
-@property (nonatomic, assign) CGRect textFrame;
+@property (nonatomic, assign) CGFloat textContentHeight;
 @property (nonatomic, copy) NSString* textContent;
 @property (nonatomic, assign) BOOL isEditing;
 @property (nonatomic, assign) NSRange selectedRange;
 @property (nonatomic, assign) BOOL shouldUpdateSelectedRange;
-
 
 @end

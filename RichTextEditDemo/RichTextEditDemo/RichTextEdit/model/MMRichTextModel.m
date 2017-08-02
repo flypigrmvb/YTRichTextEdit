@@ -14,8 +14,9 @@
 {
     self = [super init];
     if (self) {
-        _textFrame = CGRectMake(0, 0, 300, 40);
+        _textContentHeight = 40;
         _textContent = @"";
+        self.richContentType = MMRichContentTypeText;
     }
     return self;
 }

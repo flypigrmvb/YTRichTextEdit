@@ -1,9 +1,9 @@
 //
 //  MMDraftUtil.m
-//  mmosite
+//  RichTextEditDemo
 //
 //  Created by aron on 2017/7/25.
-//  Copyright © 2017年 qingot. All rights reserved.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #import "MMDraftUtil.h"
@@ -11,9 +11,7 @@
 #import "MMRichTextModel.h"
 #import "MMRichImageModel.h"
 #import "MMRichTitleModel.h"
-#import "MMDraftViewModel.h"
 #import "NSString+NSDate.h"
-#import "MMAccountManager.h"
 #import "MMRichContentUtil.h"
 
 @implementation MMDraftUtil
@@ -93,6 +91,7 @@
     draftData.modifyTimeString = [NSString yyyyMMddTHHmmssZDateStringFromDate:[NSDate date]];
 }
 
+
 // 编辑模型生产草稿模型
 + (MMDraftModel*)draftModelWithTitleModel:(MMBaseRichContentModel*)titleModel contents:(NSArray<MMBaseRichContentModel*>*)contents tid:(NSString*)tid draftId:(NSInteger)draftId {
     MMDraftModel* draftModel = [MMDraftModel new];
@@ -100,56 +99,14 @@
     draftModel.createTimeString = [NSString yyyyMMddTHHmmssZDateStringFromDate:[NSDate date]];
     draftModel.modifyTimeString = draftModel.createTimeString;
     draftModel.tid = tid;
-    draftModel.userId = [MMAccountManager sharedInstance].account.userID;
+    draftModel.userId = @"TEST_USER_ID";
     draftModel.titleModel = titleModel;
     draftModel.contentModels = contents;
     return draftModel;
 }
 
-// 模型转换
-+ (NSArray<MMDraftViewModel*>*)draftViewModelsFromDraftModels:(NSArray<MMDraftModel*>*)draftModels {
-    NSMutableArray* draftViewModels = [NSMutableArray array];
-    for (int i = 0; i < draftModels.count; i++) {
-        MMDraftModel* draftModel = draftModels[i];
-        
-        MMDraftViewModel* draftViewModel = [MMDraftViewModel new];
-        draftViewModel.draftModel = draftModel;
-        draftViewModel.title = ((MMRichTitleModel*)draftModel.titleModel).textContent;
-        draftViewModel.content = [self.class contentFromDraftModel:draftModel];
-        draftViewModel.postTime = draftModel.modifyTimeString;
-        draftViewModel.imageItems = [self.class imageItemsFromDraftModel:draftModel];
-        draftViewModel.cardType = draftViewModel.imageItems.count == 0 ? MMCardTypePubText : draftViewModel.imageItems.count < 3 ? MMCardTypePubCenterImage : MMCardTypePubThreeImages;
-        if (i == 0) {
-            draftViewModel.headerHeight = convertLength(0);
-        } else {
-            draftViewModel.headerHeight = convertLength(17);
-        }
-        
-        [draftViewModels addObject:draftViewModel];
-    }
-    return draftViewModels;
-}
-
 + (NSString*)contentFromDraftModel:(MMDraftModel*)draftModel {
     return [MMRichContentUtil plainContentFromRichContents:draftModel.contentModels];
-}
-
-+ (NSArray<PubCardImageItem *>*)imageItemsFromDraftModel:(MMDraftModel*)draftModel {
-    NSMutableArray<PubCardImageItem *>* imageItems = [NSMutableArray new];
-
-    for (int i = 0; i< draftModel.contentModels.count; i++) {
-        NSObject* content = draftModel.contentModels[i];
-        if ([content isKindOfClass:[MMRichImageModel class]]) {
-            MMRichImageModel* imgContent = (MMRichImageModel*)content;
-            PubCardImageItem* imgItem = [PubCardImageItem new];
-            if (imgContent.localImageName) {
-                imgItem.imageURLString = [[MMRichContentUtil imageSavedLocalPath] stringByAppendingPathComponent:imgContent.localImageName];
-            }
-            [imageItems addObject:imgItem];
-        }
-    }
-    
-    return imageItems;
 }
 
 

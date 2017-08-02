@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MMFileUploadUtil.h"
+#import "MMBaseRichContentModel.h"
+#import <YYModel.h>
 
 @protocol MMRichImageUploadDelegate <NSObject>
 
@@ -22,12 +24,12 @@
 @end
 
 
-@interface MMRichImageModel : NSObject <UploadItemProtocal, UploadItemCallBackProtocal>
+@interface MMRichImageModel : MMBaseRichContentModel <UploadItemProtocal, UploadItemCallBackProtocal, YYModel>
 
 @property (nonatomic, strong) UIImage* image;///<图片
-@property (nonatomic, copy) NSString* localImagePath;///<本地路径
+@property (nonatomic, copy) NSString* localImageName;///<本地保存的名称
 @property (nonatomic, copy) NSString* remoteImageUrlString;///<上传完成之后的远程路径
-@property (nonatomic, assign) CGRect imageFrame;///<Frame
+@property (nonatomic, assign) CGFloat imageContentHeight;///<Frame
 
 // 上传处理
 @property (nonatomic, assign) float uploadProgress;

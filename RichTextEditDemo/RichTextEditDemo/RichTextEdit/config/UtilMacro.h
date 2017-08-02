@@ -68,5 +68,7 @@ alpha:((float)((0x##argbValue & 0xFF000000) >> 24)) / 255.0]
 // 随机色宏定义
 #define SNRandomColor SNColorARGB(0.4, arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+// 工具类
+#define ValueOrEmpty(value) 	((value)?(value):@"")
 
 #endif
