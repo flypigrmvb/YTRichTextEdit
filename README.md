@@ -5,6 +5,7 @@
 - 编辑器图文混排编辑
 - 编辑器图片上传，带有进度和失败提示，可以重新上传操作
 - 编辑器模型转换为HTML格式内容
+- 本地数据存储的草稿箱功能
 - 配套的Java实现的服务器
 
 对应的java实现的文件服务器代码开源托管地址：[javawebserverdemo](http://git.oschina.net/dhar/javawebdemo)  
