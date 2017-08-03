@@ -38,6 +38,7 @@
 
 - (void)defaultConfig {
     _maxInputs = 1000;
+    _showPlaceHolder = YES;
     _placeHolderFrame = CGRectMake(12, 10, kScreenWidth, 18);
     _debugMode = NO;
 }
@@ -93,11 +94,7 @@
         return;
     }
     
-    if (self.text != nil && self.text.length > 0) {
-        _placeHolderLabel.hidden = YES;
-    }else {
-        _placeHolderLabel.hidden = NO;
-    }
+    [self handlePlaceholder];
     
     // 字数限制
     NSString *toBeString = self.text;
@@ -139,15 +136,7 @@
 - (void)setText:(NSString *)text {
     [super setText:text];
     
-    if (_showPlaceHolder) {
-        if (self.text != nil && self.text.length > 0) {
-            _placeHolderLabel.hidden = YES;
-        }else {
-            _placeHolderLabel.hidden = NO;
-        }
-    } else {
-        _placeHolderLabel.hidden = YES;
-    }
+    [self handlePlaceholder];
 }
 
 
@@ -161,6 +150,17 @@
     [self setPlaceHolderFrame:CGRectMake(insets.left + leftDelta, insets.top + topDelta, kScreenWidth - insets.left - insets.right, self.font.lineHeight + 2)];
 }
 
+- (void)handlePlaceholder {
+    if (_showPlaceHolder) {
+        if (self.text != nil && self.text.length > 0) {
+            _placeHolderLabel.hidden = YES;
+        } else {
+            _placeHolderLabel.hidden = NO;
+        }
+    } else {
+        _placeHolderLabel.hidden = YES;
+    }
+}
 
 #pragma mark - ......::::::: public :::::::......
 
@@ -180,15 +180,7 @@
 
 - (void)setShowPlaceHolder:(BOOL)showPlaceHolder {
     _showPlaceHolder = showPlaceHolder;
-    if (showPlaceHolder) {
-        if (self.text != nil && self.text.length > 0) {
-            _placeHolderLabel.hidden = YES;
-        }else {
-            _placeHolderLabel.hidden = NO;
-        }
-    } else {
-        _placeHolderLabel.hidden = YES;
-    }
+    [self handlePlaceholder];
 }
 
 @end

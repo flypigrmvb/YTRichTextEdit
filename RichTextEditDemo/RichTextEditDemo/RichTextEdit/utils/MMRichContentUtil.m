@@ -35,11 +35,6 @@
             [htmlContent appendString:htmlText];
             [htmlContent appendString:@"</div>"];
         }
-        
-        // 添加换行
-        if (i != richContents.count - 1) {
-            [htmlContent appendString:@"<br />"];
-        }
     }
     
     return htmlContent;
@@ -198,6 +193,21 @@
     
     return MAX(size.height, minHeight);
 }
+
+// 是否需要显示placeholder
++ (BOOL)shouldShowPlaceHolderFromRichContents:(NSArray*)richContents {
+    if (richContents.count == 1) {
+        id content = richContents.firstObject;
+        if ([content isKindOfClass:[MMRichTextModel class]]) {
+            MMRichTextModel* textContent = (MMRichTextModel*)content;
+            if (textContent.textContent.length <= 0 || [textContent.textContent isEqualToString:@"\n"]) {
+                return YES;
+            }
+        }
+    }
+    return NO;
+}
+
 
 #pragma mark - ......::::::: helper :::::::......
 

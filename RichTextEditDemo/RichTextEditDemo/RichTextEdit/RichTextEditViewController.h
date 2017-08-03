@@ -16,9 +16,8 @@
 
 @protocol RichTextEditDelegate <NSObject>
 
-// 下面的属性相当远Delegate的属性，暂时放在类的属性中处理，把当前类作为弱引用提供给Cell
-- (MMRichEditAccessoryView *)mm_inputAccessoryView1;
 - (void)mm_shouldShowAccessoryView:(BOOL)shouldShow;
+- (BOOL)mm_shouldCellShowPlaceholder;
 
 - (void)mm_preInsertTextLineAtIndexPath:(NSIndexPath*)actionIndexPath textContent:(NSString*)textContent;
 - (void)mm_postInsertTextLineAtIndexPath:(NSIndexPath*)actionIndexPath textContent:(NSString*)textContent;

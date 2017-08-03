@@ -478,7 +478,7 @@
 
 - (void)addTextNodeAtIndexPath:(NSIndexPath*)indexPath textContent:(NSString*)textContent {
     MMRichTextModel* textModel = [MMRichTextModel new];
-    textModel.textContent = [textContent isEqualToString:@"\n"] ? @"" : textContent;
+    textModel.textContent = [textContent isEqualToString:@"\n"] ? @"" : textContent == nil ? @"" : textContent;
     textModel.textContentHeight = [MMRichContentUtil computeHeightInTextVIewWithContent:textModel.textContent];
     
     [self.tableView beginUpdates];
@@ -493,11 +493,6 @@
 
 - (void)deleteItemAtIndexPathes:(NSArray<NSIndexPath*>*)actionIndexPathes shouldPositionPrevious:(BOOL)shouldPositionPrevious {
     if (actionIndexPathes.count > 0) {
-        //  定位动到上一行
-        if (shouldPositionPrevious) {
-            [self positionToPreItemAtIndexPath:actionIndexPathes.firstObject];
-        }
-        
         // 处理删除
         for (NSInteger i = actionIndexPathes.count - 1; i >= 0; i--) {
             NSIndexPath* actionIndexPath = actionIndexPathes[i];
@@ -510,6 +505,11 @@
         [self.tableView beginUpdates];
         [self.tableView deleteRowsAtIndexPaths:actionIndexPathes withRowAnimation:UITableViewRowAnimationAutomatic];
         [self.tableView endUpdates];
+        
+        //  定位动到上一行
+        if (shouldPositionPrevious) {
+            [self positionToPreItemAtIndexPath:actionIndexPathes.firstObject];
+        }
     }
 }
 
@@ -742,6 +742,7 @@
                                 // Image节点-后面-上面为Text-下面为Text：删除Image节点，合并下面的Text到上面，删除下面Text节点，定位到上面元素的后面
                                 ((MMRichTextModel*)preData).textContent = [NSString stringWithFormat:@"%@\n%@", ((MMRichTextModel*)preData).textContent, ((MMRichTextModel*)nextData).textContent];
                                 ((MMRichTextModel*)preData).textContentHeight = [MMRichContentUtil computeHeightInTextVIewWithContent:((MMRichTextModel*)preData).textContent];
+                                ((MMRichTextModel*)preData).shouldUpdateSelectedRange = YES;
                                 
                                 [self deleteItemAtIndexPathes:@[actionIndexPath, nextIndexPath] shouldPositionPrevious:YES];
                             } else {
@@ -785,6 +786,10 @@
 
 - (void)mm_shouldShowAccessoryView:(BOOL)shouldShow {
     _shouldShowAccessoryView = shouldShow;
+}
+
+- (BOOL)mm_shouldCellShowPlaceholder {
+    return [MMRichContentUtil shouldShowPlaceHolderFromRichContents:_datas];
 }
 
 

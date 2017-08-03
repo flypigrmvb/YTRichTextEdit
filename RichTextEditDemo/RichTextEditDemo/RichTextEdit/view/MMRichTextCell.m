@@ -62,35 +62,21 @@
         _textView.text = textModel.textContent;
         
         // Placeholder
-        if (indexPath.row == 0) {
-            self.textView.showPlaceHolder = YES;
-        } else {
-            self.textView.showPlaceHolder = NO;
-        }
+        [self handlePlaceholder];
     }
 }
 
 - (void)mm_beginEditing {
     [_textView becomeFirstResponder];
     
-    //    if (![_textView.text isEqualToString:_textModel.textContent]) {
-    //        _textView.text = _textModel.textContent;
-    //
-    //        // 手动调用回调方法修改
-    //        [self textViewDidChange:_textView];
-    //    }
+    _textView.text = _textModel.textContent;
     if (_textModel.shouldUpdateSelectedRange) {
-        _textView.text = _textModel.textContent;
-        
         // 手动调用回调方法修改
         [self textViewDidChange:_textView];
     }
     
-    if ([self curIndexPath].row == 0) {
-        self.textView.showPlaceHolder = YES;
-    } else {
-        self.textView.showPlaceHolder = NO;
-    }
+    // Placeholder
+    [self handlePlaceholder];
 }
 
 - (void)mm_endEditing {
@@ -175,6 +161,15 @@
     return CGRectContainsRect(visibleRect, rect);
 }
 
+- (void)handlePlaceholder {
+    if ([self.delegate respondsToSelector:@selector(mm_shouldCellShowPlaceholder)]) {
+        BOOL showPlaceholder = [self.delegate mm_shouldCellShowPlaceholder];
+        self.textView.showPlaceHolder = showPlaceholder;
+    } else {
+        self.textView.showPlaceHolder = NO;
+    }
+}
+
 
 #pragma mark - ......::::::: UITextViewDelegate :::::::......
 
@@ -208,6 +203,11 @@
         // 移动光标 https://stackoverflow.com/questions/18368567/uitableviewcell-with-uitextview-height-in-ios-7
         [self scrollToCursorForTextView:textView];
     }
+    
+    if (textView.text.length <= 0) {
+        // Placeholder
+        [self handlePlaceholder];
+    }
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
@@ -235,59 +235,18 @@
         self.isEditing = YES;
         return NO;
     }
-    if (textView.text.length + text.length >= MMEditConfig.maxTextContentCount) {
+    if (textView.text.length + text.length > MMEditConfig.maxTextContentCount) {
         return NO;
     }
     return YES;
 }
 
-- (void)textViewDidChangeSelection:(UITextView *)textView {
-    NSLog(@"");
-}
 
 #pragma mark delete handler
 
-- (void)textViewDeleteBackward:(MMTextView *)textView {
-    /*
-     BOOL isMoreThanIos9_0 = ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0f);
-     if (isMoreThanIos9_0) {
-     // IOS9以上处理删除
-     NSRange selRange = textView.selectedRange;
-     if (selRange.location == 0) {
-     if ([self.delegate respondsToSelector:@selector(mm_preDeleteItemAtIndexPath:)]) {
-     [self.delegate mm_preDeleteItemAtIndexPath:[self curIndexPath]];
-     }
-     } else {
-     if ([self.delegate respondsToSelector:@selector(mm_PostDeleteItemAtIndexPath:)]) {
-     [self.delegate mm_PostDeleteItemAtIndexPath:[self curIndexPath]];
-     }
-     }
-     }
-     */
-}
-
-- (void)textFieldDidDeleteBackward:(UITextView *)textView {
-    NSLog(@"=======");
-    //    // 处理删除
-    //    NSRange selRange = textView.selectedRange;
-    //    if (selRange.location == 0) {
-    //        if ([self.delegate respondsToSelector:@selector(mm_preDeleteItemAtIndexPath:)]) {
-    //            [self.delegate mm_preDeleteItemAtIndexPath:[self curIndexPath]];
-    //        }
-    //    } else {
-    //        if ([self.delegate respondsToSelector:@selector(mm_PostDeleteItemAtIndexPath:)]) {
-    //            [self.delegate mm_PostDeleteItemAtIndexPath:[self curIndexPath]];
-    //        }
-    //    }
-}
-
 - (void)textViewWillDelete {
-    NSLog(@"=======");
-    //    BOOL isMoreThanIos9_0 = ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0f);
-    //    if (NO == isMoreThanIos9_0) {
-    // 处理ios8的删除
+    // 处理的删除
     NSRange selRange = self.textView.selectedRange;
-    // IOS8 BUG，需要延迟回调，否则光标定位到上一行是图片会到子图片内容消失
     if (selRange.location == 0) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if ([self.delegate respondsToSelector:@selector(mm_preDeleteItemAtIndexPath:)]) {
@@ -303,7 +262,6 @@
             }
         });
     }
-    //    }
 }
 
 @end

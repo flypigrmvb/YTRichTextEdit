@@ -36,7 +36,7 @@
     [self addSubview:self.textView];
     [self addSubview:self.progressView];
     [self addSubview:self.reloadView];
-    [self.reloadView addSubview:self.reloadButton];
+    [self addSubview:self.reloadButton];
     
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self);
@@ -56,7 +56,7 @@
     }];
     [self.reloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.width.equalTo(@(convertLength(60)));
-        make.center.equalTo(self.reloadView);
+        make.center.equalTo(self);
     }];
 }
 
@@ -167,6 +167,7 @@
 - (UIView *)reloadView {
     if (!_reloadView) {
         _reloadView = [UIView new];
+        _reloadView.userInteractionEnabled = NO;
         _reloadView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.3];
     }
     return _reloadView;

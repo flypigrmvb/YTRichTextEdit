@@ -41,5 +41,6 @@
 + (float)computeHeightInTextVIewWithContent:(id)content;
 // 计算TextView中的内容的高度
 + (float)computeHeightInTextVIewWithContent:(id)content minHeight:(float)minHeight;
-
+// 是否需要显示placeholder
++ (BOOL)shouldShowPlaceHolderFromRichContents:(NSArray*)richContents;
 @end

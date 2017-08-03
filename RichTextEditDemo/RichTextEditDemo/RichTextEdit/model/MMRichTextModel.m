@@ -21,4 +21,12 @@
     return self;
 }
 
+- (void)setTextContent:(NSString *)textContent {
+    if ([textContent isEqualToString:@"\n"]) {
+        _textContent = @"";
+    } else {
+        _textContent = textContent;
+    }
+}
+
 @end

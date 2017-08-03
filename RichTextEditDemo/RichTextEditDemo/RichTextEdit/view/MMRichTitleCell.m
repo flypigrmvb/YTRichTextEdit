@@ -151,7 +151,7 @@
         self.isEditing = YES;
         return NO;
     }
-    if (textView.text.length + text.length >= MMEditConfig.titleMaxCount) {
+    if (textView.text.length + text.length > MMEditConfig.titleMaxCount) {
         return NO;
     }
     return YES;
