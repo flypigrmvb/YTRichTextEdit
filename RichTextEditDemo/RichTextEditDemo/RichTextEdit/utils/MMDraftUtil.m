@@ -18,6 +18,9 @@
 
 // 保存草稿数据
 + (void)saveDraftData:(MMDraftModel*)draftData {
+    // 验证草稿数据
+    [self validateDraftData:draftData];
+    // 保存数据库
     [MMDraftModel insertDraft:draftData error:nil];
 }
 
@@ -127,6 +130,21 @@
     if (imgPath) {
         // 删除单张图片
         [[NSFileManager defaultManager] removeItemAtPath:imgPath error:nil];
+    }
+}
+
++ (void)validateDraftData:(MMDraftModel*)draftModel {
+    for (int i = 0; i< draftModel.contentModels.count; i++) {
+        NSObject* content = draftModel.contentModels[i];
+        if ([content isKindOfClass:[MMRichImageModel class]]) {
+            MMRichImageModel* imgContent = (MMRichImageModel*)content;
+            NSString* localImagePath = [[MMRichContentUtil imageSavedLocalPath] stringByAppendingPathComponent:imgContent.localImageName];
+            BOOL isExists = [[NSFileManager defaultManager] fileExistsAtPath:localImagePath];
+            if (NO == isExists) {
+                NSString* scaledImageStoreName= [MMRichContentUtil saveImageToLocal:imgContent.image];
+                imgContent.localImageName = scaledImageStoreName;
+            }
+        }
     }
 }
 

@@ -11,10 +11,28 @@
 #import <YYModel.h>
 #import "MMDraftUtil.h"
 #import "UtilMacro.h"
+#import "MMRichImageModel.h"
 
 static NSString* draft_tableName = @"t_draft";
 
 @implementation MMDraftModel
+
+- (void)setContentModels:(NSArray<MMBaseRichContentModel *> *)contentModels {
+    for (MMBaseRichContentModel* obj in contentModels) {
+        if ([obj isKindOfClass:[MMRichImageModel class]]) {
+            MMRichImageModel* imageModel = (MMRichImageModel*)obj;
+            if (imageModel.remoteImageUrlString != nil
+                && imageModel.remoteImageUrlString.length > 0) {
+                imageModel.isFailed = NO;
+                imageModel.isDone = YES;
+            } else {
+                imageModel.isFailed = YES;
+                imageModel.isDone = NO;
+            }
+        }
+    }
+    _contentModels = contentModels;
+}
 
 /**
  *  创建表

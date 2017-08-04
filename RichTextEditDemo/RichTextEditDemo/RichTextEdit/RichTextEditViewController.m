@@ -436,6 +436,10 @@
     
     UIImage* scaledImage = [MMRichContentUtil scaleImage:image];
     NSString* scaledImageStoreName= [MMRichContentUtil saveImageToLocal:scaledImage];
+    if (scaledImageStoreName == nil || scaledImageStoreName.length <= 0) {
+        // 提示出错
+        return;
+    }
     MMRichImageModel* imageModel = [MMRichImageModel new];
     imageModel.image = scaledImage;
     imageModel.localImageName = scaledImageStoreName;

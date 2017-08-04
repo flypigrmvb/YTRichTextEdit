@@ -263,8 +263,10 @@
 // 上传进度回调
 - (void)uploadProgress:(float)progress {
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.progressView.hidden = YES;
+        self.progressView.hidden = NO;
         [self.progressView setProgress:progress];
+        self.reloadView.hidden = YES;
+        self.reloadButton.hidden = YES;
     });
 }
 
@@ -286,6 +288,8 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.progressView setProgress:1.0f];
         self.progressView.hidden = YES;
+        self.reloadView.hidden = YES;
+        self.reloadButton.hidden = YES;
         
         if ([self.delegate respondsToSelector:@selector(mm_uploadDonedAtIndexPath:)]) {
             [self.delegate mm_uploadDonedAtIndexPath:[self curIndexPath]];

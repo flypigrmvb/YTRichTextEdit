@@ -146,11 +146,17 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     NSLog(@"");
+    // 处理删除
+    if ([text isEqualToString:@""]) {
+        return YES;
+    }
     if (NO == self.isEditing) {
         // 隐藏键盘TextView显示的文字特殊处理
         self.isEditing = YES;
         return NO;
     }
+    // 中间位置不能插入更多导致超过最大值
+    // 结尾位置支持插入更多   && range.location < textView.text.length
     if (textView.text.length + text.length > MMEditConfig.titleMaxCount) {
         return NO;
     }

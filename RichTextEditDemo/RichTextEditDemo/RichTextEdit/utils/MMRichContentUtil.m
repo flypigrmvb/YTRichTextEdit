@@ -99,12 +99,25 @@
         NSObject* content = richContents[i];
         if ([content isKindOfClass:[MMRichImageModel class]]) {
             MMRichImageModel* imgContent = (MMRichImageModel*)content;
-            if (imgContent.isDone == NO) {
+            if (imgContent.isFailed == YES) {
                 return NO;
             }
         }
     }
     return YES;
+}
+
++ (BOOL)validateImagesIsUploadIngWithRichContents:(NSArray*)richContents {
+    for (int i = 0; i< richContents.count; i++) {
+        NSObject* content = richContents[i];
+        if ([content isKindOfClass:[MMRichImageModel class]]) {
+            MMRichImageModel* imgContent = (MMRichImageModel*)content;
+            if (imgContent.isDone == NO && imgContent.isFailed == NO) {
+                return YES;
+            }
+        }
+    }
+    return NO;
 }
 
 + (NSArray*)imagesFromRichContents:(NSArray*)richContents {
@@ -141,8 +154,11 @@
     NSString* savedName = [self.class genRandomFileName];
     NSData* data = UIImageJPEGRepresentation(image, 1.0);
     NSString *fileSavedPath = [path stringByAppendingPathComponent:savedName];
-    [data writeToFile:fileSavedPath atomically:YES];
-    return savedName;
+    BOOL result = [data writeToFile:fileSavedPath atomically:YES];
+    if (result) {
+        return savedName;
+    }
+    return nil;
 }
 
 // 获取图片上传失败数

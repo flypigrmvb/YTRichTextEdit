@@ -23,8 +23,10 @@
 + (BOOL)validataContentNotEmptyWithRichContents:(NSArray*)richContents;
 // 验证内容没有超过限制（1-20000）
 + (BOOL)validataContentNotOverflowWithRichContents:(NSArray*)richContents;
-// 验证内容是否有效，判断图片时候全部上传成功
+// 验证图片内容是否有效，判断图片时候全部上传成功
 + (BOOL)validateImagesWithRichContents:(NSArray*)richContents;
+// 判断图片是否正在上传
++ (BOOL)validateImagesIsUploadIngWithRichContents:(NSArray*)richContents;
 // 获取内容中的图片
 + (NSArray*)imagesFromRichContents:(NSArray*)richContents;
 // 压缩图片
