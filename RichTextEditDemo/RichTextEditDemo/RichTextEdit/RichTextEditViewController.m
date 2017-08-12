@@ -882,6 +882,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"======begin render cell");
     // Title
     if (indexPath.section == 0) {
         MMRichTitleCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(MMRichTitleCell.class)];
@@ -901,6 +902,7 @@
         MMRichImageCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(MMRichImageCell.class)];
         cell.delegate = self;
         [cell updateWithData:obj];
+        NSLog(@"======end render cell");
         return cell;
     }
     
