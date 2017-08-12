@@ -9,6 +9,7 @@
 #import "MMRichImageModel.h"
 #import "MMRichTextConfig.h"
 #import "MMRichContentUtil.h"
+#import "UIImage+Util.h"
 
 @interface MMRichImageModel ()
 @property (nonatomic, strong) NSAttributedString* attrString;
@@ -40,7 +41,7 @@
         rect.size.width = showImageWidth;
         rect.size.height = showImageWidth * self.image.size.height / self.image.size.width;
         textAttachment.bounds = rect;
-        textAttachment.image = self.image;
+        textAttachment.image = [self.image scaletoSize:showImageWidth];
         
         NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:textAttachment];
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
