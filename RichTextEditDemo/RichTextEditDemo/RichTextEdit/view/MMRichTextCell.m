@@ -77,6 +77,11 @@
     
     // Placeholder
     [self handlePlaceholder];
+    
+    // 回调
+    if ([self.delegate respondsToSelector:@selector(mm_updateActiveIndexPath:)]) {
+        [self.delegate mm_updateActiveIndexPath:[self curIndexPath]];
+    }
 }
 
 - (void)mm_endEditing {
@@ -211,7 +216,6 @@
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-    // textView.inputAccessoryView = [self.delegate mm_inputAccessoryView];
     if ([self.delegate respondsToSelector:@selector(mm_shouldShowAccessoryView:)]) {
         [self.delegate mm_shouldShowAccessoryView:YES];
     }
@@ -230,12 +234,13 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     NSLog(@"");
-    // 处理删除
+    // 处理删除，防止输入的字数为最大值的时候删除无效
     if ([text isEqualToString:@""]) {
         return YES;
     }
     if (NO == self.isEditing) {
-        // 隐藏键盘TextView显示的文字特殊处理
+        // 隐藏键盘,TextView会自动填充选中的联想词，这个地方返回NO做特殊处理，
+        // 不让TextView自动填充选中的联想词
         self.isEditing = YES;
         return NO;
     }

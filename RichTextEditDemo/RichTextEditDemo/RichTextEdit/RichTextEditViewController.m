@@ -359,15 +359,18 @@
 
 - (void)backButtonTapped {
     // 保存草稿箱
-    if ([MMRichContentUtil validateTitle:_titleModel]
-        || [MMRichContentUtil validataContentNotEmptyWithRichContents:_datas]) {
-        if (_draft) {
+    if (_draft) {
+        if ([MMRichContentUtil validateTitle:_titleModel]
+            || [MMRichContentUtil validataContentNotEmptyWithRichContents:_datas]) {
             MMDraftModel* draftData = [MMDraftUtil draftModelWithTitleModel:_titleModel contents:_datas tid:_tid draftId:_draft.draftId];
             [MMDraftUtil saveDraftData:draftData];
         } else {
-            MMDraftModel* draftData = [MMDraftUtil draftModelWithTitleModel:_titleModel contents:_datas tid:_tid draftId:0];
-            [MMDraftUtil saveDraftData:draftData];
+            // 删除草稿箱
+            [MMDraftUtil delateDraftData:_draft];
         }
+    } else {
+        MMDraftModel* draftData = [MMDraftUtil draftModelWithTitleModel:_titleModel contents:_datas tid:_tid draftId:0];
+        [MMDraftUtil saveDraftData:draftData];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -562,6 +565,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage* image = info[UIImagePickerControllerOriginalImage];
     [picker dismissViewControllerAnimated:YES completion:^ {
+        // 模拟插入多图，插入多图只要多次调用 handleInsertImage 即可
+//        for (int i = 0; i < 4; i++) {
+//            [self handleInsertImage:image];
+//        }
+        
+        // 插入单图
         [self handleInsertImage:image];
     }];
 }

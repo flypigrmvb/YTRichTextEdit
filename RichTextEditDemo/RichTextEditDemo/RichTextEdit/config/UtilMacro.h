@@ -1,9 +1,9 @@
 //
 //  UtilMacro.h
-//  MobileExperience
+//  RichTextEditDemo
 //
-//  Created by Liyu on 15/7/16.
-//  Copyright (c) 2015年 NetDragon. All rights reserved.
+//  Created by aron on 2017/8/2.
+//  Copyright © 2017年 aron. All rights reserved.
 //
 
 #ifndef MobileExperience_UtilMacro_h
