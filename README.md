@@ -11,6 +11,8 @@
 对应的java实现的文件服务器代码开源托管地址：[javawebserverdemo](http://git.oschina.net/dhar/javawebdemo)  
 
 具体的实现过程以及详细解析可以看我的这篇博客：[iOS使用UITableView实现的富文本编辑器](https://my.oschina.net/u/1242477/blog/1486577)  
+关于编辑器的性能优化可以看我的这篇博客：[iOS使用Instrument-Time Profiler工具分析和优化性能问题](https://my.oschina.net/u/1242477/blog/1506747)  
+
 
 下面是实现的效果图  
 ![Demo1](https://static.oschina.net/uploads/img/201707/24205815_bVa4.png "Demo1")
