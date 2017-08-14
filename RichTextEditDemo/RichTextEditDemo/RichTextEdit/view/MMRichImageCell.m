@@ -15,6 +15,7 @@
 
 @interface MMRichImageCell () <MMTextViewDelegate, UITextViewDelegate, MMRichImageUploadDelegate>
 @property (nonatomic, strong) MMTextView* textView;
+@property (nonatomic, strong) UIImageView* imageContentView;
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UIButton *reloadButton;
 @property (nonatomic, strong) UIView *reloadView;
@@ -34,6 +35,7 @@
 
 - (void)setupUI {
     [self addSubview:self.textView];
+    [self addSubview:self.imageContentView];
     [self addSubview:self.progressView];
     [self addSubview:self.reloadView];
     [self addSubview:self.reloadButton];
@@ -41,6 +43,9 @@
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self);
         make.bottom.equalTo(self).priority(900);
+    }];
+    [self.imageContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.textView);
     }];
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(MMEditConfig.editAreaLeftPadding + MMEditConfig.imageDeltaWidth/2);
@@ -77,11 +82,18 @@
         CGFloat width = [MMRichTextConfig sharedInstance].editAreaWidth;
         NSAttributedString* imgAttrStr = [_imageModel attrStringWithContainerWidth:width];
         self.textView.attributedText = imgAttrStr;
+        self.imageContentView.image = _imageModel.image;
         // 重新设置TextView的约束
         [self.textView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.top.right.equalTo(self);
             make.bottom.equalTo(self).priority(900);
             make.height.equalTo(@(imageModel.imageContentHeight));
+        }];
+        [self.imageContentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(_imageModel.imageFrame.origin.x);
+            make.top.equalTo(self).offset(_imageModel.imageFrame.origin.y);
+            make.height.equalTo(@(_imageModel.imageFrame.size.height));
+            make.width.equalTo(@(_imageModel.imageFrame.size.width));
         }];
         
         self.reloadView.hidden = YES;
@@ -153,6 +165,15 @@
         _textView.mm_delegate = self;
     }
     return _textView;
+}
+
+- (UIImageView *)imageContentView {
+    if (!_imageContentView) {
+        _imageContentView = [UIImageView new];
+        _imageContentView.contentMode = UIViewContentModeScaleAspectFit;
+        _imageContentView.clipsToBounds = YES;
+    }
+    return _imageContentView;
 }
 
 - (UIProgressView *)progressView {
