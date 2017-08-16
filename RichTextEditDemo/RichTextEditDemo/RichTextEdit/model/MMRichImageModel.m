@@ -13,6 +13,7 @@
 
 @interface MMRichImageModel ()
 @property (nonatomic, strong) NSAttributedString* attrString;
+@property (nonatomic, assign) CGRect imageFrame;
 @end
 
 @implementation MMRichImageModel
@@ -36,12 +37,13 @@
 - (NSAttributedString*)attrStringWithContainerWidth:(NSInteger)containerWidth {
     if (!_attrString) {
         CGFloat showImageWidth = containerWidth - MMEditConfig.editAreaLeftPadding - MMEditConfig.editAreaRightPadding - MMEditConfig.imageDeltaWidth;
+        CGFloat showImageHeight = showImageWidth * self.image.size.height / self.image.size.width;
         NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
         CGRect rect = CGRectZero;
         rect.size.width = showImageWidth;
-        rect.size.height = showImageWidth * self.image.size.height / self.image.size.width;
+        rect.size.height = showImageHeight;
         textAttachment.bounds = rect;
-        textAttachment.image = [self.image scaletoSize:showImageWidth];
+        textAttachment.image = [UIImage new];
         
         NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:textAttachment];
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -52,6 +54,9 @@
         if (_imageContentHeight <= 0) {
             _imageContentHeight = MAX(rect.size.height + MMEditConfig.editAreaTopPadding + MMEditConfig.editAreaBottomPadding, MMEditConfig.minImageContentCellHeight);
         }
+        
+        // 设置Image的Frame
+        _imageFrame = CGRectMake(MMEditConfig.editAreaLeftPadding + MMEditConfig.imageDeltaWidth / 2, MMEditConfig.editAreaTopPadding, showImageWidth, showImageHeight);
     }
     return _attrString;
 }

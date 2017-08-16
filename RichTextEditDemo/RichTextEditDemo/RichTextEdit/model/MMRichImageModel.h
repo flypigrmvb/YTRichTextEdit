@@ -30,6 +30,7 @@
 @property (nonatomic, copy) NSString* localImageName;///<本地保存的名称
 @property (nonatomic, copy) NSString* remoteImageUrlString;///<上传完成之后的远程路径
 @property (nonatomic, assign) CGFloat imageContentHeight;///<Frame
+@property (nonatomic, assign, readonly) CGRect imageFrame;
 
 // 上传处理
 @property (nonatomic, assign) float uploadProgress;
