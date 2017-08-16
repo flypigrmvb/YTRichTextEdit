@@ -437,6 +437,8 @@
 
 - (void)addImageNodeAtIndexPath:(NSIndexPath*)indexPath image:(UIImage*)image {
     
+    NSLog(@"addImageNodeAtIndexPath ===== %@", indexPath);
+    
     UIImage* scaledImage = [MMRichContentUtil scaleImage:image];
     NSString* scaledImageStoreName= [MMRichContentUtil saveImageToLocal:scaledImage];
     if (scaledImageStoreName == nil || scaledImageStoreName.length <= 0) {
@@ -455,7 +457,7 @@
     
     [self.tableView beginUpdates];
     [_datas insertObject:imageModel atIndex:indexPath.row];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableView endUpdates];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:NO];
 }
@@ -566,12 +568,12 @@
     UIImage* image = info[UIImagePickerControllerOriginalImage];
     [picker dismissViewControllerAnimated:YES completion:^ {
         // 模拟插入多图，插入多图只要多次调用 handleInsertImage 即可
-//        for (int i = 0; i < 4; i++) {
-//            [self handleInsertImage:image];
-//        }
+        for (int i = 0; i < 2; i++) {
+            [self handleInsertImage:image];
+        }
         
         // 插入单图
-        [self handleInsertImage:image];
+//        [self handleInsertImage:image];
     }];
 }
 
@@ -755,6 +757,7 @@
                                 // Image节点-后面-上面为Text-下面为Text：删除Image节点，合并下面的Text到上面，删除下面Text节点，定位到上面元素的后面
                                 ((MMRichTextModel*)preData).textContent = [NSString stringWithFormat:@"%@\n%@", ((MMRichTextModel*)preData).textContent, ((MMRichTextModel*)nextData).textContent];
                                 ((MMRichTextModel*)preData).textContentHeight = [MMRichContentUtil computeHeightInTextVIewWithContent:((MMRichTextModel*)preData).textContent];
+                                ((MMRichTextModel*)preData).selectedRange = NSMakeRange(((MMRichTextModel*)preData).textContent.length, 0);
                                 ((MMRichTextModel*)preData).shouldUpdateSelectedRange = YES;
                                 
                                 [self deleteItemAtIndexPathes:@[actionIndexPath, nextIndexPath] shouldPositionPrevious:YES];
@@ -780,6 +783,7 @@
 // 更新ActionIndexpath
 - (void)mm_updateActiveIndexPath:(NSIndexPath*)activeIndexPath {
     _activeIndexPath = activeIndexPath;
+    NSLog(@"mm_updateActiveIndexPath ===== %@", activeIndexPath);
 }
 
 // 重新加载
@@ -891,7 +895,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"======begin render cell");
     // Title
     if (indexPath.section == 0) {
         MMRichTitleCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(MMRichTitleCell.class)];
@@ -911,7 +914,6 @@
         MMRichImageCell* cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(MMRichImageCell.class)];
         cell.delegate = self;
         [cell updateWithData:obj];
-        NSLog(@"======end render cell");
         return cell;
     }
     

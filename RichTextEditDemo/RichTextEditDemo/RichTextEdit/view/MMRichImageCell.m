@@ -110,12 +110,12 @@
 
 - (void)mm_beginEditing {
     BOOL result = [self.textView becomeFirstResponder];
-    NSLog(@"result = %d", result);
+    // NSLog(@"result = %d", result);
 }
 
 - (void)mm_endEditing {
     BOOL result = [self.textView resignFirstResponder];
-    NSLog(@"result = %d", result);
+    // NSLog(@"result = %d", result);
 }
 
 - (void)getPreFlag:(BOOL*)isPre postFlag:(BOOL*)isPost {

@@ -87,7 +87,7 @@
 
 - (void)mm_endEditing {
     BOOL result = [self.textView resignFirstResponder];
-    NSLog(@"result = %d", result);
+    // NSLog(@"result = %d", result);
 }
 
 

@@ -54,7 +54,7 @@ DEF_SINGLETON
     
     NSURLSessionUploadTask * uploadtask = [self.session uploadTaskWithRequest:request fromData:totalData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSString* result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"completionHandler  %@", result);
+        // NSLog(@"completionHandler  %@", result);
     }];
     [uploadtask resume];
 }
@@ -122,7 +122,7 @@ DEF_SINGLETON
     __block NSURLSessionUploadTask * uploadtask = nil;
     uploadtask = [self.session uploadTaskWithRequest:request fromData:totalData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSString* result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"completionHandler  %@", result);
+        // NSLog(@"completionHandler  %@", result);
        
         if (nil == error) {
             NSString* imgUrlString = @"";
@@ -182,7 +182,7 @@ DEF_SINGLETON
         NSString* object=[dictionary objectForKey:allKeys[i]];
         disposition =[disposition stringByAppendingString:object];
         disposition =[disposition stringByAppendingString:Wrap1];
-        NSLog(@"%s\n%@",__FUNCTION__,disposition);
+        // NSLog(@"%s\n%@",__FUNCTION__,disposition);
         [totlData appendData:[disposition dataUsingEncoding:NSUTF8StringEncoding]];
     }
     NSString *body=[NSString stringWithFormat:@"%@Content-Disposition: form-data; name=\"picture\"; filename=\"%@\";Content-Type:image/png%@",StartBoundary,@"demo_avatar_cook.png",Wrap2];
@@ -211,7 +211,7 @@ DEF_SINGLETON
 #pragma mark - ......::::::: NSURLSessionDelegate :::::::......
 
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error{
-    NSLog(@"didCompleteWithError = %@",error.description);
+    // NSLog(@"didCompleteWithError = %@",error.description);
     
     // 失败回调
     if (error) {
@@ -229,7 +229,7 @@ DEF_SINGLETON
 }
 
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend{
-    NSLog(@"bytesSent:%@-totalBytesSent:%@-totalBytesExpectedToSend:%@", @(bytesSent), @(totalBytesSent), @(totalBytesExpectedToSend));
+    // NSLog(@"bytesSent:%@-totalBytesSent:%@-totalBytesExpectedToSend:%@", @(bytesSent), @(totalBytesSent), @(totalBytesExpectedToSend));
     
     // 进度回调
     id<UploadItemProtocal, UploadItemCallBackProtocal> uploadItem = [self.uploadingTaskIDToUploadItemMap objectForKey:@(task.taskIdentifier)];
