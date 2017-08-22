@@ -369,8 +369,11 @@
             [MMDraftUtil delateDraftData:_draft];
         }
     } else {
-        MMDraftModel* draftData = [MMDraftUtil draftModelWithTitleModel:_titleModel contents:_datas tid:_tid draftId:0];
-        [MMDraftUtil saveDraftData:draftData];
+        if ([MMRichContentUtil validateTitle:_titleModel]
+            || [MMRichContentUtil validataContentNotEmptyWithRichContents:_datas]) {
+            MMDraftModel* draftData = [MMDraftUtil draftModelWithTitleModel:_titleModel contents:_datas tid:_tid draftId:0];
+            [MMDraftUtil saveDraftData:draftData];
+        }
     }
     
     [self.navigationController popViewControllerAnimated:YES];
