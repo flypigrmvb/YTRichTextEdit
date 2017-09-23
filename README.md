@@ -19,6 +19,10 @@
 ![Demo4](https://static.oschina.net/uploads/img/201707/27230228_sDyH.png "Demo4")
 ![Demo3](https://static.oschina.net/uploads/img/201707/24205938_syUr.png "Demo3")
 
+#### 使用方法
+项目使用 cocoapods 管理依赖库，如果没有安装cocoapods，可以参考 [Cocoapods安装和升级备忘录](https://my.oschina.net/u/1242477/blog/1480211) 这篇文章。  
+已经安装好cocoapods，进入到 `RichTextEditDemo` 目录（Podfile文件所在的目录），执行命令 `pod update --no-repo-update` 下载依赖库，打开 `RichTextEditDemo.xcworkspace` 即可。
+
 #### 已知问题
 - 单段文字输入的内容很长，大于10000个英文字符会出现卡顿的情况，目前没有完美的解决方法，项目是使用简单的限制单段文字的长度为5000
 
